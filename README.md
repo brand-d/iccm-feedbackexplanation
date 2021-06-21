@@ -89,7 +89,7 @@ The experiment will save the data locally in the `storage` subfolder.
 
 The webexperiment was created using [Construct3](https://www.construct.net), which is a browser-based authoring tool to generate HTML5/Javascript applications and games.
 
-The webexperiment can be opened using the editorat https://editor.construct.net/ by choosing the `Open local project folder` option and then loading the `source` folder.
+The webexperiment can be opened using the editor at https://editor.construct.net/ by choosing the `Open local project folder` option and then loading the `source` folder.
 
 ### References
 
