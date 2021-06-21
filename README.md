@@ -60,7 +60,7 @@ An HTML-file will be created in the same folder. When opening the file, the pred
 To generate the plots, execute the script with the following command:
 
 ```
-cd /path/to/repository/analysis/benchmarks/
+cd /path/to/repository/analysis/
 $> python plot_param_distribution.py
 ```
 
@@ -68,7 +68,7 @@ The plots will be generated as PDF-files in the same folder.
 In the same manner, you can run the statistics script:
 
 ```
-cd /path/to/repository/analysis/benchmarks/
+cd /path/to/repository/analysis/
 $> python statistics.py
 ```
 
