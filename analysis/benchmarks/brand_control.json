@@ -1,0 +1,9 @@
+{
+    "type": "coverage",
+    "data.test": "../../data/Brand2021/Brand2021_FeedbackEffect_Control.csv",
+    "models": [
+        "../../models/transset/transset.py",
+        "../../models/phm/phm_ccobra.py",
+        "../../models/mreasoner/mreasoner.py"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "type": "coverage",
+    "data.test": "../../data/Dames2020/data_control.csv",
+    "models": [
+        "../../models/transset/transset.py",
+        "../../models/phm/phm_ccobra.py",
+        "../../models/mreasoner/mreasoner.py"
+    ]
+}
