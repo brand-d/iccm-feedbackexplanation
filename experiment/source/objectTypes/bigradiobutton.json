@@ -1,0 +1,223 @@
+{
+	"name": "BigRadioButton",
+	"plugin-id": "Sprite",
+	"sid": 654382238340212,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "ButtonText",
+			"type": "string",
+			"desc": "",
+			"sid": 411926454111919
+		},
+		{
+			"name": "isPressed",
+			"type": "boolean",
+			"desc": "",
+			"sid": 892071221472330
+		},
+		{
+			"name": "isDisabled",
+			"type": "boolean",
+			"desc": "",
+			"sid": 274184652745805
+		},
+		{
+			"name": "ButtonTag",
+			"type": "string",
+			"desc": "",
+			"sid": 180732480263774
+		},
+		{
+			"name": "isChecked",
+			"type": "boolean",
+			"desc": "",
+			"sid": 662316132112160
+		},
+		{
+			"name": "RadioTag",
+			"type": "string",
+			"desc": "",
+			"sid": 893148375792969
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8296891,
+						"collisionPoly": {
+							"points": [
+								0.00510204081632653,
+								0.014705882352941176,
+								0.5,
+								0,
+								0.9897959183673469,
+								0.014705882352941176,
+								0.9948979591836735,
+								0.5,
+								0.9897959183673469,
+								0.9705882352941176,
+								0.5,
+								0.9852941176470589,
+								0.00510204081632653,
+								0.9705882352941176,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 902866431901225,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3476243,
+						"collisionPoly": {
+							"points": [
+								0.00510204081632653,
+								0.014705882352941176,
+								0.5,
+								0,
+								0.9897959183673469,
+								0.014705882352941176,
+								0.9948979591836735,
+								0.5,
+								0.9897959183673469,
+								0.9705882352941176,
+								0.5,
+								0.9852941176470589,
+								0.00510204081632653,
+								0.9705882352941176,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 993518976945980,
+				"name": "Hovered",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1475882,
+						"collisionPoly": {
+							"points": [
+								0.00510204081632653,
+								0.014705882352941176,
+								0.5,
+								0,
+								0.9897959183673469,
+								0.014705882352941176,
+								0.9948979591836735,
+								0.5,
+								0.9897959183673469,
+								0.9705882352941176,
+								0.5,
+								0.9852941176470589,
+								0.00510204081632653,
+								0.9705882352941176,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 203994394268323,
+				"name": "Pressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 196,
+						"height": 67,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7273847,
+						"collisionPoly": {
+							"points": [
+								0.00510204081632653,
+								0.014925373134328358,
+								0.5,
+								0,
+								0.9897959183673469,
+								0.014925373134328358,
+								0.9948979591836735,
+								0.5,
+								0.9897959183673469,
+								0.9701492537313433,
+								0.5,
+								0.9850746268656716,
+								0.00510204081632653,
+								0.9701492537313433,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 599803812287653,
+				"name": "Disabled",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

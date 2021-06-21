@@ -1,0 +1,293 @@
+{
+	"name": "FinalSlide",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 212,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Thank you for participating!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 161,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Thank you for participating in our reasoning study!\nPlease click on [b]Return to Prolific[/b], so we can grant credit for your participation. The study will end automatically.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 162,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 36,
+						"y": 108,
+						"width": 936,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 163,
+					"instanceVariables": {
+						"ButtonText": "Return to Prolific",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": false,
+						"ButtonTag": "Finish"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 416,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 213,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 214,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 648,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "If you have any questions regarding the study, you can contact us via email (daniel.brand@cognition.uni-freiburg.de).",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 215,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 36,
+						"y": 204,
+						"width": 936,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 600739655750533,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 942577638605256,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1024,
+	"height": 768,
+	"unboundedScrolling": false,
+	"eventSheet": "FinishE"
+}

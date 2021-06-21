@@ -1,0 +1,471 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 24100,
+	"name": "Syllogism Feedback",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AdvancedRandom",
+			"name": "Advanced Random",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "NinePatch",
+			"name": "9-patch",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r241",
+			"bundled": false
+		}
+	],
+	"uniqueId": "ai43o92p2qv",
+	"objectTypes": {
+		"items": [
+			"TaskText",
+			"ErrorBox",
+			"CorrectBox",
+			"ConclusionText",
+			"Keyboard"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"JSON",
+					"Date",
+					"AJAX",
+					"Browser",
+					"LocalStorage",
+					"Touch",
+					"AdvancedRandom",
+					"Mouse",
+					"PartCode"
+				],
+				"subfolders": [],
+				"name": "System"
+			},
+			{
+				"items": [
+					"FOLResponses"
+				],
+				"subfolders": [],
+				"name": "Syllogism"
+			},
+			{
+				"items": [
+					"ButtonText",
+					"Button",
+					"Text",
+					"RadioBorder",
+					"RadioButtonText",
+					"RadioInnerMarker",
+					"ConfidenceText",
+					"RadioBorderLabelBelow",
+					"RadioButtonTextLabelBelow",
+					"RadioInnerMarkerLabelBelow",
+					"ResponseBlockBackground",
+					"BackgroundBox",
+					"greyline",
+					"blackline"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"Slider",
+							"SliderBorder",
+							"SliderFill",
+							"SliderScale"
+						],
+						"subfolders": [],
+						"name": "Slider"
+					}
+				],
+				"name": "UI"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"AgeInput"
+						],
+						"subfolders": [],
+						"name": "Demographic"
+					},
+					{
+						"items": [
+							"TaskPresentation"
+						],
+						"subfolders": [],
+						"name": "Task"
+					},
+					{
+						"items": [
+							"InstructionControl",
+							"InstructionFeedback",
+							"NoMoreFeedbackText"
+						],
+						"subfolders": [],
+						"name": "Instructions"
+					}
+				],
+				"name": "Slides"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"Button",
+				"ButtonText"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"RadioBorder",
+				"RadioButtonText",
+				"RadioInnerMarker"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"RadioBorderLabelBelow",
+				"RadioButtonTextLabelBelow",
+				"RadioInnerMarkerLabelBelow"
+			],
+			"selectMode": "normal"
+		},
+		{
+			"members": [
+				"Slider",
+				"SliderBorder",
+				"SliderFill",
+				"SliderScale"
+			],
+			"selectMode": "normal"
+		}
+	],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Consent",
+			"Demographic"
+		],
+		"subfolders": [
+			{
+				"items": [
+					"Loader",
+					"Error",
+					"ResumeExperiment",
+					"ResumeError"
+				],
+				"subfolders": [],
+				"name": "System"
+			},
+			{
+				"items": [
+					"TaskNormal",
+					"Instructions",
+					"Instructions2",
+					"StartConfidenceInstruction",
+					"TaskConfidence",
+					"FinalSurvey",
+					"FinalSlide"
+				],
+				"subfolders": [],
+				"name": "Slides"
+			}
+		]
+	},
+	"eventSheets": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"ConsentE"
+				],
+				"subfolders": [],
+				"name": "Consent"
+			},
+			{
+				"items": [
+					"ResumeE",
+					"ResumeErrorE"
+				],
+				"subfolders": [],
+				"name": "Reloading"
+			},
+			{
+				"items": [
+					"WebserverE",
+					"GeneralE",
+					"InitialE",
+					"ButtonE",
+					"FinishE",
+					"ErrorE"
+				],
+				"subfolders": [],
+				"name": "System"
+			},
+			{
+				"items": [
+					"InstructionsE",
+					"TaskE",
+					"DemographicE",
+					"Instructions2E",
+					"ConfidenceInstructionE",
+					"TaskConfidenceE",
+					"EndSurveyE"
+				],
+				"subfolders": [],
+				"name": "Slides"
+			},
+			{
+				"items": [
+					"SyllogismE"
+				],
+				"subfolders": [],
+				"name": "Syllogism"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 680655781968314,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 397705476961878,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 897025507838911,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 254628064134957,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [
+				{
+					"name": "file.css",
+					"type": "text/css",
+					"sid": 587049511518888
+				},
+				{
+					"name": "folResponses.json",
+					"type": "application/json",
+					"sid": 562618600413133
+				}
+			],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "With this experiment, we aim at studying the way humans reason. Thank you for participating!",
+		"version": "1.0.0.0",
+		"author": "Daniel Brand",
+		"authorEmail": "daniel.brand@cognition.uni-freiburg.de",
+		"authorWebsite": "https://www.cc.uni-freiburg.de/",
+		"appId": "de.uni-freiburg.cclab.syllogismfeedback",
+		"pixelRounding": false,
+		"useLoaderLayout": true,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "landscape",
+		"enableWebGL": true,
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress",
+		"preloadSounds": true,
+		"clearBackground": true,
+		"enhancedAccelerationPrecision": true,
+		"cordovaiOSScheme": "app"
+	},
+	"viewportWidth": 1024,
+	"viewportHeight": 768,
+	"firstLayout": "Loader"
+}

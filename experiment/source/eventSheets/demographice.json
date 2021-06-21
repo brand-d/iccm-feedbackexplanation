@@ -1,0 +1,716 @@
+{
+	"name": "DemographicE",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 738672394523354,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 718302452066139
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 199532763498071,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 319376545860137,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Gender --> Education"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 611340627010941,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"comparison": 0,
+								"value": "\"ToEducation\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 363002827641219,
+							"parameters": {
+								"path": "\"prolificPid\"",
+								"value": "ProlificId"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 686540922459323,
+							"parameters": {
+								"path": "\"age\"",
+								"value": "AgeInput.Text"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 404391844360001,
+							"parameters": {
+								"path": "\"gender\"",
+								"value": "Functions.GetRadioValue(\"gender\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 136747266082439,
+							"parameters": {
+								"path": "\"time_demog\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 304548849314439,
+							"parameters": {
+								"layer": "\"Demographics\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 454953929803088,
+							"parameters": {
+								"layer": "\"Education\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 918143751881441,
+							"parameters": {
+								"variable": "ResponseTime",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 874241808542792,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 683596259968276,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "\"education\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 285883927725905,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 250620138324615
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 755805535612713,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "\"gender\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 405963521966315,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 142996680144895
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Education --> hobbies/interests"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 217117112115072,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"comparison": 0,
+								"value": "\"ToInterests\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 287690601737201,
+							"parameters": {
+								"path": "\"education\"",
+								"value": "Functions.GetRadioValue(\"education\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 657234316016113,
+							"parameters": {
+								"path": "\"time_education\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 146217914985189,
+							"parameters": {
+								"layer": "\"Demographics\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 122966461903785,
+							"parameters": {
+								"layer": "\"Education\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 844704128811789,
+							"parameters": {
+								"layer": "\"Interests\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 561367865372109,
+							"parameters": {
+								"variable": "ResponseTime",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 740209855341181,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 196925305635238,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "\"education\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 208269730276310,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 170936759859498
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 786947923738452,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "\"maths\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 893790670032755,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 159552228194703
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 555437124810878,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "\"puzzles\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 189556469970133,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 980896313377935
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Interests --> Done"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 648571416052938,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"comparison": 0,
+								"value": "\"Continue\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 863315219309642,
+							"parameters": {
+								"path": "\"unfocused\"",
+								"value": "TotalTimeUnfocused"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 960834384148116,
+							"parameters": {
+								"path": "\"time_interests\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 854349021226774,
+							"parameters": {
+								"path": "\"puzzles\"",
+								"value": "Functions.GetRadioValue(\"puzzles\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 544545178533542,
+							"parameters": {
+								"path": "\"maths\"",
+								"value": "Functions.GetRadioValue(\"maths\")"
+							}
+						},
+						{
+							"callFunction": "SaveData",
+							"sid": 508901105957333,
+							"parameters": [
+								"JSON.ToCompactString"
+							]
+						}
+					],
+					"sid": 932045009949779
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 905476532732349,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 127470771723645
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 955669450093631,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 952713798650618,
+					"parameters": {
+						"layout": "Instructions"
+					}
+				}
+			],
+			"sid": 210876658375125
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 878028671173573,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToEducation\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 641495242495424,
+					"parameters": {
+						"instance-variable": "isDisabled"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 621807607236773,
+					"parameters": {
+						"layer": "\"Demographics\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 733883036318560,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorder",
+							"sid": 367388058261421,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"gender\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 828117341894197,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 736003909766251,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 490726281499278
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 408778132089513,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToInterests\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 920534603387112,
+					"parameters": {
+						"instance-variable": "isDisabled"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 975761521780442,
+					"parameters": {
+						"layer": "\"Education\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 553736038248014,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorder",
+							"sid": 581542223431527,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"education\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 570453410125497,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 944812455798564,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 355206008728340
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 674918668790809,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Continue\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 742852494102962,
+					"parameters": {
+						"instance-variable": "isDisabled"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 794089298533828,
+					"parameters": {
+						"layer": "\"Interests\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 850060819404555,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "mathsClicked",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 758186587236035
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorder",
+							"sid": 636924820474806,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"maths\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 591183749855560,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 732203360040721,
+							"parameters": {
+								"variable": "mathsClicked",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 235806277828289
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorder",
+							"sid": 560400788682589,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"puzzles\""
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 179088756159051,
+							"parameters": {
+								"variable": "mathsClicked"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 701373297092132,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 732869427626177,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 967432369644664
+				}
+			]
+		}
+	],
+	"sid": 620707425400109
+}

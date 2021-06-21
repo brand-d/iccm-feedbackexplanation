@@ -1,0 +1,377 @@
+{
+	"name": "StartConfidenceInstruction",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 193,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "First block completed!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 116,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "You successfully completed the first block! In the remaining [b]16[/b] tasks, we will also ask you about your [b]confidence[/b] in your answer. ",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 117,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 60,
+						"y": 128,
+						"width": 924,
+						"height": 60,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "For each task, a slider ranging from [b]0[/b] (not confident at all; guessing) to [b]100[/b] (very confident; sure that the answer is correct) is shown after you selected an answer. Please [b]adjust the slider according to your confidence[/b]. Keep in mind that you can not change your selected answer once you locked it in.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 118,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 52,
+						"y": 192,
+						"width": 936,
+						"height": 120,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "NoMoreFeedbackText",
+					"properties": {
+						"text": "Note that for the remaining tasks, [b]no feedback is provided[/b] after an answer is given.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": false,
+						"origin": "top-left"
+					},
+					"uid": 120,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 48,
+						"y": 312,
+						"width": 948,
+						"height": 60,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "If you are ready to continue with the remaining tasks, please press the [b]Continue[/b]-button below.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 119,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 64,
+						"y": 368,
+						"width": 900,
+						"height": 72,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 121,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": false,
+						"ButtonTag": "Continue"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 414,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 194,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 195,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 648,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 570617188251824,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 148822175363864,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1024,
+	"height": 768,
+	"unboundedScrolling": false,
+	"eventSheet": "ConfidenceInstructionE"
+}

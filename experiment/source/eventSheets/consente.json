@@ -1,0 +1,89 @@
+{
+	"name": "ConsentE",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 108685402238020,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 650034724357888,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Consent\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 967240508955255
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 265443578478152,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "CreateParticipant",
+					"sid": 203594763705025
+				}
+			],
+			"sid": 656758688217766
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 349047261819363,
+					"parameters": {
+						"variable": "PersonIdentifier",
+						"comparison": 1,
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 958785872352193
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 113180065000148,
+					"parameters": {
+						"layout": "Demographic"
+					}
+				}
+			],
+			"sid": 485257563619502
+		}
+	],
+	"sid": 402018357709747
+}

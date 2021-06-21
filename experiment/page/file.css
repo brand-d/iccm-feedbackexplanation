@@ -1,0 +1,35 @@
+#numberInput {
+	text-align: center;
+	font-size: 18px;
+}
+
+#continueBtn {
+	background-color: #e7e7e7;
+    border: 1px solid rgb(122, 122, 122);
+    color: black;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    transition-duration: 0.3s;
+}
+
+#continueBtn:hover {
+    background-color: #d6d6d6;
+    color: black;
+}
+  
+#continueBtn:active {
+    background-color: #c2c2c2;
+    color: black;
+}
+  
+#continueBtn[disabled] {
+    background-color: #a0a0a0;
+    color: #363636;
+}
+
+#dropDown {
+	text-align: center;
+	font-size: 16px;
+}

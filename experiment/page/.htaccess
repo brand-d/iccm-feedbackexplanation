@@ -1,0 +1,11 @@
+Order Allow,Deny
+allow from all
+Satisfy any
+
+<FilesMatch ".(htaccess|htpasswd|log|sh|csv)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+Options -Indexes
+
+Header set Access-Control-Allow-Origin "https://preview.construct.net"

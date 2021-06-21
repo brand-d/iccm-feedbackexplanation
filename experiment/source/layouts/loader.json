@@ -1,0 +1,96 @@
+{
+	"name": "Loader",
+	"layers": [
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Loading...",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 11,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 288,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 599770146790616,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 487870017756534,
+	"nonworld-instances": [
+		{
+			"type": "JSON",
+			"properties": {},
+			"uid": 15,
+			"instanceVariables": {}
+		},
+		{
+			"type": "FOLResponses",
+			"properties": {},
+			"uid": 41,
+			"instanceVariables": {}
+		}
+	],
+	"effectTypes": [],
+	"width": 1024,
+	"height": 768,
+	"unboundedScrolling": false,
+	"eventSheet": "InitialE"
+}

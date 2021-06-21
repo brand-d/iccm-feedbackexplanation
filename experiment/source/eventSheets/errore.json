@@ -1,0 +1,107 @@
+{
+	"name": "ErrorE",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 832951116073503
+				}
+			],
+			"actions": [],
+			"sid": 259409110493550,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 137703441744768,
+							"parameters": {
+								"variable": "PersonIdentifier",
+								"comparison": 0,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 926802930682029,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910906252949710,
+									"parameters": {
+										"variable": "ProlificId",
+										"comparison": 0,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "PartCode",
+									"sid": 452043160091648,
+									"parameters": {
+										"text": "\"3D0Q0N\""
+									}
+								}
+							],
+							"sid": 997615532484683
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 364831221778816
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "PartCode",
+									"sid": 561875292814667,
+									"parameters": {
+										"text": "ProlificId"
+									}
+								}
+							],
+							"sid": 152803625409452
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 762567077781377
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "PartCode",
+							"sid": 855063664847774,
+							"parameters": {
+								"text": "PersonIdentifier"
+							}
+						}
+					],
+					"sid": 577158072500928
+				}
+			]
+		}
+	],
+	"sid": 517763424390175
+}

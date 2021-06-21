@@ -1,0 +1,95 @@
+{
+	"name": "SliderScale",
+	"plugin-id": "Sprite",
+	"sid": 172495586270443,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "minValue",
+			"type": "number",
+			"desc": "",
+			"sid": 442305454379690
+		},
+		{
+			"name": "maxValue",
+			"type": "number",
+			"desc": "",
+			"sid": 820208411445788
+		},
+		{
+			"name": "currentValue",
+			"type": "number",
+			"desc": "",
+			"sid": 615208641892095
+		},
+		{
+			"name": "isDisabled",
+			"type": "boolean",
+			"desc": "",
+			"sid": 495308814668133
+		},
+		{
+			"name": "SliderTag",
+			"type": "string",
+			"desc": "",
+			"sid": 825758530917382
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 304,
+						"height": 26,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7972068,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5,
+								0,
+								0.9967105263157895,
+								0,
+								0.993421052631579,
+								0.5,
+								0.993421052631579,
+								0.9230769230769231,
+								0.5,
+								0.9230769230769231,
+								0.003289473684210526,
+								0.9230769230769231,
+								0.003289473684210526,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Image Point 1",
+								"x": 0,
+								"y": 0.15384615384615385
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 945388990797730,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

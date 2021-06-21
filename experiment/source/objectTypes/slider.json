@@ -1,0 +1,70 @@
+{
+	"name": "Slider",
+	"plugin-id": "Sprite",
+	"sid": 147634054056644,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "isGrapped",
+			"type": "boolean",
+			"desc": "",
+			"sid": 309254333866883
+		},
+		{
+			"name": "wasClickeed",
+			"type": "boolean",
+			"desc": "",
+			"sid": 399477999321206
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 21,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3984408,
+						"collisionPoly": {
+							"points": [
+								0.047619047619047616,
+								0.027777777777777776,
+								0.5,
+								0,
+								0.9047619047619048,
+								0.027777777777777776,
+								0.9523809523809523,
+								0.5,
+								0.7619047619047619,
+								0.8611111111111112,
+								0.5,
+								0.9722222222222222,
+								0.19047619047619047,
+								0.8611111111111112,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 542486965413542,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

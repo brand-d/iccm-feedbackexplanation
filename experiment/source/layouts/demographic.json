@@ -1,0 +1,1641 @@
+{
+	"name": "Demographic",
+	"layers": [
+		{
+			"name": "Demographics",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 170,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Demographical Questions",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 13,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "How old are you?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 16,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 384,
+						"y": 192,
+						"width": 276,
+						"height": 36,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "AgeInput",
+					"properties": {
+						"text": "",
+						"placeholder": "Please enter your age",
+						"tooltip": "",
+						"initially-visible": true,
+						"enabled": true,
+						"read-only": false,
+						"spell-check": false,
+						"type": "number",
+						"auto-font-size": true,
+						"id": "numberInput"
+					},
+					"uid": 17,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 384,
+						"y": 240,
+						"width": 192,
+						"height": 32,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						]
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "What is your gender?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 20,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 384,
+						"y": 324,
+						"width": 288,
+						"height": 36,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Please answer the following questions about your person. Your data will be stored anonymized and cannot be traced back to your person.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 24,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 48,
+						"y": 108,
+						"width": 936,
+						"height": 60,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 10,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": true,
+						"ButtonTag": "ToEducation"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 416,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 30,
+					"instanceVariables": {
+						"RadioTag": "gender",
+						"RadioText": "Female",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "female",
+						"isDisabled": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 408,
+						"y": 384,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioInnerMarker",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 38,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 408,
+						"y": 384,
+						"width": 23,
+						"height": 23,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioButtonText",
+					"properties": {
+						"text": "Text",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "left"
+					},
+					"uid": 78,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 444,
+						"y": 384,
+						"width": 276,
+						"height": 36,
+						"originX": 0,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 79,
+					"instanceVariables": {
+						"RadioTag": "gender",
+						"RadioText": "Male",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "male",
+						"isDisabled": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 408,
+						"y": 444,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 80,
+					"instanceVariables": {
+						"RadioTag": "gender",
+						"RadioText": "Diverse",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "diverse",
+						"isDisabled": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 408,
+						"y": 504,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 81,
+					"instanceVariables": {
+						"RadioTag": "gender",
+						"RadioText": "I prefer not to tell",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "none",
+						"isDisabled": false
+					},
+					"behaviors": {},
+					"world": {
+						"x": 408,
+						"y": 564,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "(optional)",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 83,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 588,
+						"y": 240,
+						"width": 96,
+						"height": 36,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 174,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 175,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 58.624,
+						"height": 0.256,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 176,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 636,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 233823670863073,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Education",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 177,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 82,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": true,
+						"ButtonTag": "ToInterests"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 416,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "What is the highest degree or level of school you have completed?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 22,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 204,
+						"y": 84,
+						"width": 648,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 85,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "Doctoral degree",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "doctoral",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 516,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 86,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "No schooling completed",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "no_school",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 216,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 87,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "Elementary school",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "elementary",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 276,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 88,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "Middle school",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "middle",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 336,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 89,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "High school",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "high",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 396,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 90,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "University",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "university",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 456,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 91,
+					"instanceVariables": {
+						"RadioTag": "education",
+						"RadioText": "I prefer not to tell",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "none",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 372,
+						"y": 576,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Education",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 100,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 178,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 179,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 636,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 951506157281501,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "Interests",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 180,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 84,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": true,
+						"ButtonTag": "Continue"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 416,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Do you enjoy solving puzzles?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 92,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 132,
+						"width": 1020,
+						"height": 36,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Are you good at math/logic?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 20,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 93,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 372,
+						"width": 1020,
+						"height": 36,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 94,
+					"instanceVariables": {
+						"RadioTag": "puzzles",
+						"RadioText": "Yes",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "yes",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 360,
+						"y": 204,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 95,
+					"instanceVariables": {
+						"RadioTag": "puzzles",
+						"RadioText": "No",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "no",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 360,
+						"y": 264,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 96,
+					"instanceVariables": {
+						"RadioTag": "puzzles",
+						"RadioText": "I prefer not to tell",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "none",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 360,
+						"y": 324,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 97,
+					"instanceVariables": {
+						"RadioTag": "maths",
+						"RadioText": "Yes",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "yes",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 360,
+						"y": 444,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 98,
+					"instanceVariables": {
+						"RadioTag": "maths",
+						"RadioText": "No",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "no",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 360,
+						"y": 504,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorder",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 99,
+					"instanceVariables": {
+						"RadioTag": "maths",
+						"RadioText": "I prefer not to tell",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "none",
+						"isDisabled": true
+					},
+					"behaviors": {},
+					"world": {
+						"x": 360,
+						"y": 564,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Personal interests",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 101,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 181,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 182,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 636,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 533678864974279,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 916207126072730,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1024,
+	"height": 768,
+	"unboundedScrolling": false,
+	"eventSheet": "DemographicE"
+}

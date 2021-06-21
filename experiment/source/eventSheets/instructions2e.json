@@ -1,0 +1,121 @@
+{
+	"name": "Instructions2E",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 649851045598745,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 205317410284133,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Continue\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 613568688197301
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 692289128549263,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 109863262063058,
+					"parameters": {
+						"path": "\"time\"",
+						"value": "ResponseTime"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 565166736437466,
+					"parameters": {
+						"path": "\"unfocused\"",
+						"value": "TotalTimeUnfocused"
+					}
+				},
+				{
+					"callFunction": "SaveData",
+					"sid": 868906318680648,
+					"parameters": [
+						"JSON.ToCompactString"
+					]
+				}
+			],
+			"sid": 573970886912905
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 283236233931730,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 449574106741137
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 330495692716292,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 471765508124315,
+					"parameters": {
+						"layout": "TaskNormal"
+					}
+				}
+			],
+			"sid": 908682116186005
+		}
+	],
+	"sid": 245521578714421
+}

@@ -1,0 +1,2163 @@
+{
+	"name": "ButtonE",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Button",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Button",
+							"sid": 195626468240812
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "ButtonText",
+							"sid": 202889053016999,
+							"parameters": {
+								"x": "Button.X + 2",
+								"y": "Button.Y + 3"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "ButtonText",
+							"sid": 139103771819704,
+							"parameters": {
+								"text": "Button.ButtonText"
+							}
+						}
+					],
+					"sid": 205286058158075
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 395215046442649,
+							"parameters": {
+								"object": "Button"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 868398017408184,
+							"parameters": {
+								"instance-variable": "isPressed"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 676910399270229,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Button",
+							"sid": 333998732883572,
+							"parameters": {
+								"animation": "\"Hovered\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 953010413151139
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 624687764349915
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 549467450970889,
+							"parameters": {
+								"object": "Button"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 450698219112030,
+							"parameters": {
+								"instance-variable": "isPressed"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 338630263750002,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Button",
+							"sid": 493778368452183,
+							"parameters": {
+								"animation": "\"Default\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 921768969983200
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 619324304322154,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 891180285594206,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Button",
+									"sid": 327815241063453,
+									"parameters": {
+										"instance-variable": "isDisabled"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Button",
+									"sid": 856312128750608,
+									"parameters": {
+										"animation": "\"Disabled\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "ButtonText",
+									"sid": 257469410295228,
+									"parameters": {
+										"color": "rgbEx(70,70, 70)"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 701519129153625,
+									"parameters": {
+										"instance-variable": "isFiring",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 831006731894495,
+									"parameters": {
+										"instance-variable": "isPressed",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 208623594434398
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 514258169434708
+								}
+							],
+							"actions": [
+								{
+									"id": "set-font-color",
+									"objectClass": "ButtonText",
+									"sid": 400839974822033,
+									"parameters": {
+										"color": "rgbEx(0,0,0)"
+									}
+								}
+							],
+							"sid": 723641365785704,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 392276934840198,
+											"parameters": {
+												"object": "Button"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Button",
+											"sid": 292045740761505,
+											"parameters": {
+												"instance-variable": "isPressed"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Button",
+											"sid": 604026672209509,
+											"parameters": {
+												"animation": "\"Default\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 443168416425470
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 611605577375655
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Button",
+											"sid": 665803221901714,
+											"parameters": {
+												"instance-variable": "isPressed"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Button",
+											"sid": 388884503570190,
+											"parameters": {
+												"animation": "\"Hovered\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 811732636848589
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 326703538712143
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Button",
+											"sid": 387933965199764,
+											"parameters": {
+												"animation": "\"Pressed\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 997214128250057
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 309852690919456,
+							"parameters": {
+								"object": "Button"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 522134937500143,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 167368138365455,
+							"parameters": {
+								"instance-variable": "isPressed",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 867059683700046
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 249124524932409,
+							"parameters": {
+								"object": "Button"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 777277335591903,
+							"parameters": {
+								"instance-variable": "isPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 997200679842771
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 814739646039354,
+							"parameters": {
+								"instance-variable": "isPressed"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 148071948523634,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Button",
+							"sid": 251800606405427,
+							"parameters": {
+								"animation": "\"Pressed\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 208411788930542
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 891424743100565
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 525069540192086,
+							"parameters": {
+								"instance-variable": "isPressed"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 931999851151614,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 761920477424851,
+							"parameters": {
+								"instance-variable": "isFiring",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 249659072793238,
+							"parameters": {
+								"instance-variable": "isPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 472663198367094
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Button",
+							"sid": 684542781949756,
+							"parameters": {
+								"instance-variable": "isFiring"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 432484594946239,
+							"parameters": {
+								"seconds": "0"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 408638075070781,
+							"parameters": {
+								"instance-variable": "isFiring",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 380089358778026
+				}
+			],
+			"sid": 273841892073839
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RadioButton",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "GetRadioValue",
+					"functionDescription": "Returns the value of a radio button",
+					"functionCategory": "Button",
+					"functionReturnType": "string",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "tag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "The tag of the radio buttons",
+							"sid": 916641087463435
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 764445305603687,
+							"parameters": {
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 431623194413299,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 454774904070234,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "tag"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorder",
+									"sid": 163110190904517,
+									"parameters": {
+										"instance-variable": "isChecked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 987697448765001,
+									"parameters": {
+										"value": "RadioBorder.RadioValue"
+									}
+								}
+							],
+							"sid": 630754464634973
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 160870738893331,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "tag"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 821340604190307,
+									"parameters": {
+										"instance-variable": "isChecked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 750769475710110,
+									"parameters": {
+										"value": "RadioBorderLabelBelow.RadioValue"
+									}
+								}
+							],
+							"sid": 177956321143549
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "RadioBorder",
+							"sid": 976052381828546
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "RadioInnerMarker",
+							"sid": 954370707322340,
+							"parameters": {
+								"x": "RadioBorder.X",
+								"y": "RadioBorder.Y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "RadioButtonText",
+							"sid": 919463603833576,
+							"parameters": {
+								"text": "RadioBorder.RadioText"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "RadioButtonText",
+							"sid": 463433748684571,
+							"parameters": {
+								"x": "RadioBorder.X + RadioBorder.Width * 0.8",
+								"y": "RadioBorder.Y"
+							}
+						}
+					],
+					"sid": 729040045794586
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 937856658382629,
+							"parameters": {
+								"object": "RadioBorder"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 348708550782708,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorder",
+									"sid": 709700867157543,
+									"parameters": {
+										"instance-variable": "isDisabled"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RadioBorder",
+									"sid": 600815299941881,
+									"parameters": {
+										"animation": "\"Disabled\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "RadioInnerMarker",
+									"sid": 361222971209114,
+									"parameters": {
+										"animation": "\"Disabled\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "RadioButtonText",
+									"sid": 180888569284963,
+									"parameters": {
+										"color": "rgbEx(70, 70, 70)"
+									}
+								}
+							],
+							"sid": 307174266668057
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 388113252601454
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RadioInnerMarker",
+									"sid": 717678852275092,
+									"parameters": {
+										"animation": "\"Empty\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "RadioButtonText",
+									"sid": 345365655944997,
+									"parameters": {
+										"color": "rgbEx(0, 0, 0)"
+									}
+								}
+							],
+							"sid": 823139804201102
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorder",
+									"sid": 938372893764777,
+									"parameters": {
+										"instance-variable": "isChecked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "RadioInnerMarker",
+									"sid": 952982628724635,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 533325970223911
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 320085730269351
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "RadioInnerMarker",
+									"sid": 932487811517432,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 635590806303767
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 832909922616165,
+							"parameters": {
+								"object": "RadioBorder"
+							}
+						},
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 172353122353230,
+							"parameters": {
+								"object": "RadioButtonText"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 228983642827611,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorder",
+									"sid": 249316022947965,
+									"parameters": {
+										"instance-variable": "isDisabled"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 381752965598177,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 543728245037238,
+											"parameters": {
+												"object": "RadioBorder"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "RadioBorder",
+											"sid": 153432948046741,
+											"parameters": {
+												"instance-variable": "isPressed",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 715277135479394
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "RadioBorder",
+											"sid": 392865810039681,
+											"parameters": {
+												"instance-variable": "isPressed",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 141156349149766
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 261760671099574
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 759390780213032,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 629043283475725,
+							"parameters": {
+								"instance-variable": "isPressed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RadioBorder",
+							"sid": 783292503410988,
+							"parameters": {
+								"instance-variable": "isPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 411749309755172,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "tag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 173819282228488
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 275104426771894,
+									"parameters": {
+										"variable": "tag",
+										"value": "RadioBorder.RadioTag"
+									}
+								}
+							],
+							"sid": 510326820277165
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 112929669513067,
+									"parameters": {
+										"object": "RadioBorder"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorder",
+									"sid": 954660949930220,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "tag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 523525667334731,
+									"parameters": {
+										"instance-variable": "isChecked",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 539020553209476
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorder",
+									"sid": 679866645762948,
+									"parameters": {
+										"instance-variable": "isChecked",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 982212556593711
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 381222548498543,
+							"parameters": {
+								"object": "RadioBorder"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 232542997068870,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 688302285144158,
+							"parameters": {
+								"instance-variable": "isPressed"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "RadioBorder",
+							"sid": 124677075201947,
+							"parameters": {
+								"animation": "\"Hovered\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 718650034394191
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 910086960209640
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 940881486316374,
+							"parameters": {
+								"object": "RadioBorder"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 401508042263730,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 831406271833423,
+							"parameters": {
+								"instance-variable": "isPressed"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "RadioBorder",
+							"sid": 610744923416269,
+							"parameters": {
+								"animation": "\"Empty\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 895103793442661
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 246835400600328,
+							"parameters": {
+								"instance-variable": "isPressed"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorder",
+							"sid": 114906216210491,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "RadioBorder",
+							"sid": 975568666131933,
+							"parameters": {
+								"animation": "\"Pressed\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 931438930315001
+				}
+			],
+			"sid": 566759061386964
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RadioButton2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 169980138258126
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "RadioInnerMarkerLabelBelow",
+							"sid": 774826932496131,
+							"parameters": {
+								"x": "RadioBorderLabelBelow.X",
+								"y": "RadioBorderLabelBelow.Y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "RadioButtonTextLabelBelow",
+							"sid": 268472476883086,
+							"parameters": {
+								"text": "RadioBorderLabelBelow.RadioText"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "RadioButtonTextLabelBelow",
+							"sid": 100555830868441,
+							"parameters": {
+								"x": "RadioBorderLabelBelow.X ",
+								"y": "RadioBorderLabelBelow.Y+ RadioButtonTextLabelBelow.Height* RadioBorderLabelBelow.YFactor"
+							}
+						}
+					],
+					"sid": 242353216291079
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 400124856696143,
+							"parameters": {
+								"object": "RadioBorderLabelBelow"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 315493695831830,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 123298834410452,
+									"parameters": {
+										"instance-variable": "isDisabled"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 658279414618561,
+									"parameters": {
+										"animation": "\"Disabled\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "RadioInnerMarkerLabelBelow",
+									"sid": 400483190909741,
+									"parameters": {
+										"animation": "\"Disabled\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "RadioButtonTextLabelBelow",
+									"sid": 224355510453848,
+									"parameters": {
+										"color": "rgbEx(70, 70, 70)"
+									}
+								}
+							],
+							"sid": 131589145806220
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 663485307419289
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "RadioInnerMarkerLabelBelow",
+									"sid": 904062436268931,
+									"parameters": {
+										"animation": "\"Empty\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "RadioButtonTextLabelBelow",
+									"sid": 658501828839009,
+									"parameters": {
+										"color": "rgbEx(0, 0, 0)"
+									}
+								}
+							],
+							"sid": 264029533189445
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 774944277556185,
+									"parameters": {
+										"instance-variable": "isChecked"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "RadioInnerMarkerLabelBelow",
+									"sid": 737270460406433,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 484834504365924
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 219328229404729
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "RadioInnerMarkerLabelBelow",
+									"sid": 535683273702610,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 616186617497040
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 946712166212193,
+							"parameters": {
+								"object": "RadioBorderLabelBelow"
+							}
+						},
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 393494238488481,
+							"parameters": {
+								"object": "RadioButtonTextLabelBelow"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 730719295432449,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 899763658122503,
+									"parameters": {
+										"instance-variable": "isDisabled"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 141072910503102,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-all",
+											"objectClass": "System",
+											"sid": 500863893397636,
+											"parameters": {
+												"object": "RadioBorderLabelBelow"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "RadioBorderLabelBelow",
+											"sid": 815292015910229,
+											"parameters": {
+												"instance-variable": "isPressed",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 430781967508372
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "RadioBorderLabelBelow",
+											"sid": 379942663467388,
+											"parameters": {
+												"instance-variable": "isPressed",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 548469086697391
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 503945903972089
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 780874767839383,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 899975797272679,
+							"parameters": {
+								"instance-variable": "isPressed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 533075452482010,
+							"parameters": {
+								"instance-variable": "isPressed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 824277714412572,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "tag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 610891537483023
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 630465417981378,
+									"parameters": {
+										"variable": "tag",
+										"value": "RadioBorderLabelBelow.RadioTag"
+									}
+								}
+							],
+							"sid": 914651682349415
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 440015665614474,
+									"parameters": {
+										"object": "RadioBorderLabelBelow"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 549911687913239,
+									"parameters": {
+										"instance-variable": "RadioTag",
+										"comparison": 0,
+										"value": "tag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 435736904984102,
+									"parameters": {
+										"instance-variable": "isChecked",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 952879669211772
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "RadioBorderLabelBelow",
+									"sid": 613926184127551,
+									"parameters": {
+										"instance-variable": "isChecked",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 839595419621750
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 397188441263347,
+							"parameters": {
+								"object": "RadioBorderLabelBelow"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 656669928658359,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 514127800980796,
+							"parameters": {
+								"instance-variable": "isPressed"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 963702974932242,
+							"parameters": {
+								"animation": "\"Hovered\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 470294361665019
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 641117800086273
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 954707129459075,
+							"parameters": {
+								"object": "RadioBorderLabelBelow"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 833609148997376,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 947391127233922,
+							"parameters": {
+								"instance-variable": "isPressed"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 935339971633997,
+							"parameters": {
+								"animation": "\"Empty\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 831475204923227
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 571430268239723,
+							"parameters": {
+								"instance-variable": "isPressed"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 556990315447280,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 434346215414343,
+							"parameters": {
+								"animation": "\"Pressed\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 686826203537545
+				}
+			],
+			"sid": 670361157882586
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Slider",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "GetSliderValue",
+					"functionDescription": "Returns the value of a slider",
+					"functionCategory": "Button",
+					"functionReturnType": "number",
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "tag",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 716142382187109
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 930176201888666,
+							"parameters": {
+								"value": "-1"
+							}
+						}
+					],
+					"sid": 962273370405457,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SliderScale",
+									"sid": 539602795342532,
+									"parameters": {
+										"instance-variable": "SliderTag",
+										"comparison": 0,
+										"value": "tag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 565857962896915,
+									"parameters": {
+										"value": "SliderScale.currentValue"
+									}
+								}
+							],
+							"sid": 763531662294149
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "SliderScale",
+							"sid": 805590588234173
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "SliderBorder",
+							"sid": 543356924130723,
+							"parameters": {
+								"x": "SliderScale.X",
+								"y": "SliderScale.Y"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "SliderFill",
+							"sid": 218008130031709,
+							"parameters": {
+								"x": "SliderScale.ImagePointX(1)",
+								"y": "SliderScale.ImagePointY(1)"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "SliderFill",
+							"sid": 329608703770881,
+							"parameters": {
+								"where": "in-front",
+								"object": "SliderScale"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "SliderBorder",
+							"sid": 573599908930626,
+							"parameters": {
+								"where": "in-front",
+								"object": "SliderFill"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Slider",
+							"sid": 284322073942843,
+							"parameters": {
+								"x": "SliderScale.ImagePointX(1)",
+								"y": "SliderScale.ImagePointY(1)"
+							}
+						},
+						{
+							"id": "move-to-object",
+							"objectClass": "Slider",
+							"sid": 691925125064921,
+							"parameters": {
+								"where": "in-front",
+								"object": "SliderBorder"
+							}
+						}
+					],
+					"sid": 618282092215273
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "SliderScale",
+							"sid": 387897689045180
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "SliderFill",
+							"sid": 413223016318436,
+							"parameters": {
+								"width": "SliderScale.Width * (SliderScale.currentValue - SliderScale.minValue) / (SliderScale.maxValue- SliderScale.minValue)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Slider",
+							"sid": 992181971494642,
+							"parameters": {
+								"x": "SliderScale.ImagePointX(1) + SliderScale.Width * (SliderScale.currentValue - SliderScale.minValue) / (SliderScale.maxValue- SliderScale.minValue)",
+								"y": "SliderScale.ImagePointY(1)"
+							}
+						}
+					],
+					"sid": 420781005902001
+				},
+				{
+					"eventType": "comment",
+					"text": "Grabbing the slider"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 741487374836350,
+							"parameters": {
+								"object": "Slider"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SliderScale",
+							"sid": 862155564865621,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 294805370750813,
+							"parameters": {
+								"instance-variable": "isGrapped",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 266556757418965,
+							"parameters": {
+								"instance-variable": "wasClickeed",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 369356321545528
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 516598363675048
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Slider",
+							"sid": 740533858958309,
+							"parameters": {
+								"instance-variable": "isGrapped"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SliderScale",
+							"sid": 168788013055712,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Slider",
+							"sid": 653365376846251,
+							"parameters": {
+								"x": "max(SliderScale.ImagePointX(1), min(SliderScale.ImagePointX(1) + SliderScale.Width, Touch.X(0)))"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SliderScale",
+							"sid": 239714679702769,
+							"parameters": {
+								"instance-variable": "currentValue",
+								"value": "floor(((Slider.X - SliderScale.ImagePointX(1)) / SliderScale.Width) * (SliderScale.maxValue - SliderScale.minValue) + SliderScale.minValue)"
+							}
+						}
+					],
+					"sid": 518182541681809
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SliderScale",
+							"sid": 310123886241249,
+							"parameters": {
+								"instance-variable": "isDisabled"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 366368131932394,
+							"parameters": {
+								"instance-variable": "isGrapped",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 811931313158612,
+							"parameters": {
+								"instance-variable": "wasClickeed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 425191442080249
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 207943378582817
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Slider",
+							"sid": 782344788383346,
+							"parameters": {
+								"instance-variable": "isGrapped"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 702447279980248,
+							"parameters": {
+								"instance-variable": "isGrapped",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 228736097080832
+				},
+				{
+					"eventType": "comment",
+					"text": "Clicking the slider and controlling it by keyboard"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 565480195707142
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Slider",
+							"sid": 531410214395642,
+							"parameters": {
+								"instance-variable": "wasClickeed"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 226943724442889,
+							"parameters": {
+								"object": "Slider"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 507617918225173,
+							"parameters": {
+								"object": "SliderScale"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 154526330687274,
+							"parameters": {
+								"instance-variable": "wasClickeed",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 680785787061570
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 958130839931477,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Slider",
+							"sid": 253418514686061,
+							"parameters": {
+								"instance-variable": "wasClickeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SliderScale",
+							"sid": 707142484578798,
+							"parameters": {
+								"instance-variable": "currentValue",
+								"value": "max(SliderScale.minValue, SliderScale.currentValue - (SliderScale.maxValue - SliderScale.minValue) * 0.05)"
+							}
+						}
+					],
+					"sid": 305386028911640
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 965456302836239,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Slider",
+							"sid": 910752719861308,
+							"parameters": {
+								"instance-variable": "wasClickeed"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SliderScale",
+							"sid": 516139172123772,
+							"parameters": {
+								"instance-variable": "currentValue",
+								"value": "min(SliderScale.maxValue, SliderScale.currentValue + (SliderScale.maxValue - SliderScale.minValue) * 0.05)"
+							}
+						}
+					],
+					"sid": 659350120581329
+				},
+				{
+					"eventType": "comment",
+					"text": "Clicking in the bar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 636756665422410,
+							"parameters": {
+								"object": "SliderScale"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Slider",
+							"sid": 527002213467827,
+							"parameters": {
+								"x": "max(SliderScale.ImagePointX(1), min(SliderScale.ImagePointX(1) + SliderScale.Width, Touch.X(0)))"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SliderScale",
+							"sid": 952337938388190,
+							"parameters": {
+								"instance-variable": "currentValue",
+								"value": "floor(((Slider.X - SliderScale.ImagePointX(1)) / SliderScale.Width) * (SliderScale.maxValue - SliderScale.minValue) + SliderScale.minValue)"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Slider",
+							"sid": 673515056527290,
+							"parameters": {
+								"instance-variable": "wasClickeed",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 733329242430603
+				}
+			],
+			"sid": 941159984007313
+		},
+		{
+			"functionName": "RefreshButtonTexts",
+			"functionDescription": "Resets all button texts",
+			"functionCategory": "Button",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 525601879746821,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 424894647054934,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "ButtonText",
+							"sid": 249823668751931,
+							"parameters": {
+								"text": "Button.ButtonText"
+							}
+						}
+					],
+					"sid": 750463659390723
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 653665005165621,
+							"parameters": {
+								"object": "RadioBorder"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "RadioButtonText",
+							"sid": 711156490426076,
+							"parameters": {
+								"text": "RadioBorder.RadioText"
+							}
+						}
+					],
+					"sid": 705181057295051
+				}
+			]
+		}
+	],
+	"sid": 118089852851078
+}

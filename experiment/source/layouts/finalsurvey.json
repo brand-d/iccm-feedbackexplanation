@@ -1,0 +1,1682 @@
+{
+	"name": "FinalSurvey",
+	"layers": [
+		{
+			"name": "InitialLayer",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 201,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Second block finished!",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 48,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 104,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 1024,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "You succeessfully completed all tasks. Before the study ends, we will ask you a few additional questions about the way you solved the tasks. ",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 105,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 64,
+						"y": 96,
+						"width": 896,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Please click [b]Continue[/b] to go to the final questions.",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 106,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 64,
+						"y": 160,
+						"width": 896,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 107,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": false,
+						"ButtonTag": "ToEndSurvey"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 414,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 202,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 84,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 203,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 648,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 643147070488655,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "EndSurvey",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 204,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Have you participated in a similar study before?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 19,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 108,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 28,
+						"y": 0,
+						"width": 972,
+						"height": 60,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Did you develop strategies over the course of the study that made the tasks easier or allowed you to solve the tasks faster?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 19,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 109,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 28,
+						"y": 180,
+						"width": 972,
+						"height": 72,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Towards the end of the study : Were your answers based more on intuition than before, or were they more thought-out (compared to the beginning of the experiment)?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 19,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 110,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 32,
+						"y": 396,
+						"width": 960,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 137,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": true,
+						"ButtonTag": "ToFeedbackOrEnding"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 414,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 139,
+					"instanceVariables": {
+						"RadioTag": "system12",
+						"RadioText": "More based on intuition",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "1",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 146,
+						"y": 528,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioButtonTextLabelBelow",
+					"properties": {
+						"text": "More based on intuition",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 16,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "center"
+					},
+					"uid": 140,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 144,
+						"y": 588,
+						"width": 168,
+						"height": 72,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioInnerMarkerLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 141,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 144,
+						"y": 528,
+						"width": 23,
+						"height": 23,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 142,
+					"instanceVariables": {
+						"RadioTag": "system12",
+						"RadioText": "Slightly more based on intuition",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "2",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 326,
+						"y": 528,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 144,
+					"instanceVariables": {
+						"RadioTag": "system12",
+						"RadioText": "Unchanged",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "3",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 506,
+						"y": 528,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 146,
+					"instanceVariables": {
+						"RadioTag": "system12",
+						"RadioText": "Slightly more tought-out",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "4",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 686,
+						"y": 528,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 149,
+					"instanceVariables": {
+						"RadioTag": "system12",
+						"RadioText": "More thought-out",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "5",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 866,
+						"y": 528,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 150,
+					"instanceVariables": {
+						"RadioTag": "strategies",
+						"RadioText": "Not at all",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "1",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 326,
+						"y": 288,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 154,
+					"instanceVariables": {
+						"RadioTag": "strategies",
+						"RadioText": "Only for specific cases",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "2",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 506,
+						"y": 288,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 156,
+					"instanceVariables": {
+						"RadioTag": "strategies",
+						"RadioText": "Yes, for all/most cases",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "2",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 686,
+						"y": 288,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 143,
+					"instanceVariables": {
+						"RadioTag": "experience",
+						"RadioText": "Yes",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "yes",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 428,
+						"y": 84,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 145,
+					"instanceVariables": {
+						"RadioTag": "experience",
+						"RadioText": "No",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "no",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 596,
+						"y": 84,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 205,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 168,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 206,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 888,
+						"y": -156,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 207,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 384,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 208,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 648,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 868364413430676,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		},
+		{
+			"name": "FeedbackSurvey",
+			"overriden": 0,
+			"instances": [
+				{
+					"type": "BackgroundBox",
+					"properties": {
+						"left-margin": 16,
+						"right-margin": 16,
+						"top-margin": 16,
+						"bottom-margin": 16,
+						"edges": "tile",
+						"fill": "stretch",
+						"initially-visible": true,
+						"origin": "top-left",
+						"seams": "overlap"
+					},
+					"uid": 209,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 24,
+						"y": 0,
+						"width": 984,
+						"height": 756,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "How would you rate the influence of the feedback on your way of solving the tasks (e.g., have you changed/adjusted the way you solve the tasks due to the feedback)?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 111,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 28,
+						"y": 0,
+						"width": 972,
+						"height": 72,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0.0012403629017440042,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Text",
+					"properties": {
+						"text": "Overall, do you think the feedback was helpful or did it have a negative effect on your performance (e.g., due to making you doubt your answers)?",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 136,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 28,
+						"y": 228,
+						"width": 972,
+						"height": 60,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Button",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 138,
+					"instanceVariables": {
+						"ButtonText": "Continue",
+						"isFiring": false,
+						"isPressed": false,
+						"isDisabled": true,
+						"ButtonTag": "ToEnding"
+					},
+					"behaviors": {},
+					"world": {
+						"x": 414,
+						"y": 672,
+						"width": 196,
+						"height": 68,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 147,
+					"instanceVariables": {
+						"RadioTag": "adjusted",
+						"RadioText": "Rather low influence",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "2",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 332,
+						"y": 96,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 148,
+					"instanceVariables": {
+						"RadioTag": "adjusted",
+						"RadioText": "Some influence",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "3",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 512,
+						"y": 96,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 151,
+					"instanceVariables": {
+						"RadioTag": "adjusted",
+						"RadioText": "Rather high influence",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "4",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 692,
+						"y": 96,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 152,
+					"instanceVariables": {
+						"RadioTag": "adjusted",
+						"RadioText": "No influence",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "1",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 152,
+						"y": 96,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 153,
+					"instanceVariables": {
+						"RadioTag": "adjusted",
+						"RadioText": "High influence",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "5",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 872,
+						"y": 96,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 155,
+					"instanceVariables": {
+						"RadioTag": "helpful",
+						"RadioText": "Rather negative",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "2",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 332,
+						"y": 324,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 157,
+					"instanceVariables": {
+						"RadioTag": "helpful",
+						"RadioText": "Neither helpful, nor negative",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "3",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 512,
+						"y": 324,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 158,
+					"instanceVariables": {
+						"RadioTag": "helpful",
+						"RadioText": "Rather helpful",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "4",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 692,
+						"y": 324,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 159,
+					"instanceVariables": {
+						"RadioTag": "helpful",
+						"RadioText": "Strong negative effects",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "1",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 152,
+						"y": 324,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 160,
+					"instanceVariables": {
+						"RadioTag": "helpful",
+						"RadioText": "Helpful",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "5",
+						"isDisabled": true,
+						"YFactor": 0.7
+					},
+					"behaviors": {},
+					"world": {
+						"x": 872,
+						"y": 324,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 210,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 216,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "greyline",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 211,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 516,
+						"y": 648,
+						"width": 960,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 961541784430338,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				1,
+				1,
+				1,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"global": false
+		}
+	],
+	"sid": 384986627012352,
+	"nonworld-instances": [],
+	"effectTypes": [],
+	"width": 1024,
+	"height": 768,
+	"unboundedScrolling": false,
+	"eventSheet": "EndSurveyE"
+}

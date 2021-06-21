@@ -1,0 +1,314 @@
+{
+	"name": "WebserverE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "BACKEND_PATH",
+			"type": "string",
+			"initialValue": "storage/",
+			"comment": "Base path where the microservices are stored",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 236611485294669
+		},
+		{
+			"eventType": "variable",
+			"name": "RETURN_PATH",
+			"type": "string",
+			"initialValue": "https://app.prolific.co/submissions/complete?cc=3AFE1DAD",
+			"comment": "Prolific return path",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 227905464448720
+		},
+		{
+			"eventType": "variable",
+			"name": "PersonIdentifier",
+			"type": "string",
+			"initialValue": "",
+			"comment": "The unique identifier provided by the Server",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 814572850271788
+		},
+		{
+			"eventType": "variable",
+			"name": "dataSaved",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "True, if the data was successfully saved",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 269154381051685
+		},
+		{
+			"eventType": "variable",
+			"name": "ProlificId",
+			"type": "string",
+			"initialValue": "",
+			"comment": "The prolific id of the participant",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 429173000227907
+		},
+		{
+			"eventType": "variable",
+			"name": "FeedbackCondition",
+			"type": "string",
+			"initialValue": "",
+			"comment": "If set, a URL param for the feeback condition was set",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 387881216123799
+		},
+		{
+			"functionName": "CreateParticipant",
+			"functionDescription": "Creates a new participant on the server",
+			"functionCategory": "WebServer",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "request-url",
+					"objectClass": "AJAX",
+					"sid": 312257763351835,
+					"parameters": {
+						"tag": "\"createParticipant\"",
+						"url": "BACKEND_PATH & \"create_person.php\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 563378908705680
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 585991676546118,
+					"parameters": {
+						"variable": "PersonIdentifier",
+						"value": "replace(AJAX.LastData, \"\"\"\", \"\")"
+					}
+				}
+			],
+			"sid": 848064653306822
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-error",
+					"objectClass": "AJAX",
+					"sid": 700261130898815
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 205265588624222,
+					"parameters": {
+						"layout": "Error"
+					}
+				}
+			],
+			"sid": 260026738807358
+		},
+		{
+			"functionName": "SaveData",
+			"functionDescription": "Saves data on the webserver. On success, the 'dataSaved' boolean will be true",
+			"functionCategory": "WebServer",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "data",
+					"type": "string",
+					"initialValue": "",
+					"comment": "The data to store. Ideally, this is a json string",
+					"sid": 533915028154991
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 636351329677593,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "post-to-url",
+					"objectClass": "AJAX",
+					"sid": 250409861950052,
+					"parameters": {
+						"tag": "\"saveData\"",
+						"url": "BACKEND_PATH & \"save_data.php?id=\" & PersonIdentifier",
+						"data": "data",
+						"method": "\"POST\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 925531004623615
+				}
+			],
+			"sid": 230838995220451,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 253533007251827,
+							"parameters": {
+								"first-value": "AJAX.LastData",
+								"comparison": 0,
+								"second-value": "\"true\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 821355440721368,
+							"parameters": {
+								"variable": "dataSaved",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 697141024449457
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 329671951599602
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 155775910341847,
+							"parameters": {
+								"layout": "Error"
+							}
+						}
+					],
+					"sid": 965253178784498
+				}
+			]
+		},
+		{
+			"functionName": "FinishExperiment",
+			"functionDescription": "Routes the participant back to prolific",
+			"functionCategory": "WebServer",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "clear-storage",
+					"objectClass": "LocalStorage",
+					"sid": 663736148593130
+				},
+				{
+					"id": "go-to-url",
+					"objectClass": "Browser",
+					"sid": 598448333588086,
+					"parameters": {
+						"url": "RETURN_PATH",
+						"target": "self"
+					}
+				}
+			],
+			"sid": 690983153523601
+		},
+		{
+			"functionName": "InitProlificId",
+			"functionDescription": "Reads the prolific id from the URL arguments",
+			"functionCategory": "WebServer",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 998294612313268,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 377320971787941,
+							"parameters": {
+								"first-value": "find(Browser.URL, \"PROLIFIC_PID\")",
+								"comparison": 1,
+								"second-value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 253413595130067,
+							"parameters": {
+								"variable": "ProlificId",
+								"value": "Browser.QueryParam(\"PROLIFIC_PID\")"
+							}
+						}
+					],
+					"sid": 805845031795990
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 372793568905379,
+							"parameters": {
+								"first-value": "find(Browser.URL, \"FCOND\")",
+								"comparison": 1,
+								"second-value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 968007101691461,
+							"parameters": {
+								"variable": "FeedbackCondition",
+								"value": "Browser.QueryParam(\"FCOND\")"
+							}
+						}
+					],
+					"sid": 824037146362149
+				}
+			]
+		}
+	],
+	"sid": 213852391653366
+}

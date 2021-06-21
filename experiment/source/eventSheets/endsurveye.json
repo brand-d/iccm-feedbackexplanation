@@ -1,0 +1,815 @@
+{
+	"name": "EndSurveyE",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 784317004027846
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 572902708522733,
+					"parameters": {
+						"layer": "\"EndSurvey\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 972990868662190,
+					"parameters": {
+						"layer": "\"InitialLayer\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 776217937740584,
+					"parameters": {
+						"layer": "\"FeedbackSurvey\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 535923182724948
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 972513127202787,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 670248256810197,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToEndSurvey\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 801031070849604
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 486430065767212,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 601931898932252,
+					"parameters": {
+						"path": "\"time_read_ending\"",
+						"value": "ResponseTime"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 750373298145014,
+					"parameters": {
+						"path": "\"unfocused\"",
+						"value": "TotalTimeUnfocused"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 684953093895787,
+					"parameters": {
+						"variable": "ResponseTime",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 915223988888833,
+					"parameters": {
+						"layer": "\"EndSurvey\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 429649253659876,
+					"parameters": {
+						"layer": "\"InitialLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 467676496559354,
+					"parameters": {
+						"layer": "\"FeedbackSurvey\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 606266330033727
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 651376674556019,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 363934814321810,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToFeedbackOrEnding\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 821559644259684
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 954263183579821,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 660190818431379,
+					"parameters": {
+						"path": "\"time_general_ending\"",
+						"value": "ResponseTime"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 526984593170574,
+					"parameters": {
+						"path": "\"experience\"",
+						"value": "Functions.GetRadioValue(\"experience\")"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 572695865050211,
+					"parameters": {
+						"path": "\"strategies\"",
+						"value": "Functions.GetRadioValue(\"strategies\")"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 832080495587782,
+					"parameters": {
+						"path": "\"system12\"",
+						"value": "Functions.GetRadioValue(\"system12\")"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 903801725880456,
+					"parameters": {
+						"path": "\"unfocused\"",
+						"value": "TotalTimeUnfocused"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 459789044906618,
+					"parameters": {
+						"layer": "\"EndSurvey\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 799651784967243,
+					"parameters": {
+						"layer": "\"InitialLayer\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 637639842163058,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 246101897631158,
+							"parameters": {
+								"variable": "isFeedbackCondition"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 722220341883573,
+							"parameters": {
+								"variable": "ResponseTime",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 517315398769662,
+							"parameters": {
+								"layer": "\"FeedbackSurvey\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 153008499333434
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 175624420291489
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 165244665046752,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						},
+						{
+							"callFunction": "SaveData",
+							"sid": 977099371918904,
+							"parameters": [
+								"JSON.ToCompactString"
+							]
+						}
+					],
+					"sid": 996437756184095
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 799402226028587,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 465447435463471,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToEnding\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 247500600613114
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 506196708500893,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 870857138055046,
+					"parameters": {
+						"path": "\"time_feedback_rating\"",
+						"value": "ResponseTime"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 477167037550779,
+					"parameters": {
+						"path": "\"unfocused\"",
+						"value": "TotalTimeUnfocused"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 710939660786122,
+					"parameters": {
+						"path": "\"adjusted\"",
+						"value": "Functions.GetRadioValue(\"adjusted\")"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 378485260647249,
+					"parameters": {
+						"path": "\"helpful\"",
+						"value": "Functions.GetRadioValue(\"helpful\")"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "RadioBorderLabelBelow",
+					"sid": 964893435283058,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "SaveData",
+					"sid": 728365606795657,
+					"parameters": [
+						"JSON.ToCompactString"
+					]
+				}
+			],
+			"sid": 472093123895183
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 422324698568948,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 151152320425155
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 296977552545779,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 516426594477620,
+					"parameters": {
+						"layout": "FinalSlide"
+					}
+				}
+			],
+			"sid": 296778403978208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 483812715449983,
+					"parameters": {
+						"layer": "\"EndSurvey\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 808340088489549,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToFeedbackOrEnding\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 133532672978492,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "experienceChecked",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 453039196889232
+				},
+				{
+					"eventType": "variable",
+					"name": "strategiesChecked",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 246740643038076
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 555180074054115,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"experience\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 294802683733198,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 881854961657503,
+							"parameters": {
+								"variable": "experienceChecked",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 273761062477077
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 863163367680181,
+							"parameters": {
+								"variable": "experienceChecked"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 822975304010372,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"strategies\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 494847983707110,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 689812327101851,
+							"parameters": {
+								"variable": "strategiesChecked",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 574030354812126
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 870400949317560,
+							"parameters": {
+								"variable": "strategiesChecked"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 159123258145308,
+							"parameters": {
+								"variable": "experienceChecked"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 126941986215214,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"system12\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 807719967814271,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 127888456829097,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 365932501081623
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 148516155536125,
+					"parameters": {
+						"layer": "\"FeedbackSurvey\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 347371512196579,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"ToEnding\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 337901413010806,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "adjustedChecked",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 665542700644426
+				},
+				{
+					"eventType": "variable",
+					"name": "strategiesChecked",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 801067847352458
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 343623035746232,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"adjusted\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 158858424338029,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 399793435272136,
+							"parameters": {
+								"variable": "adjustedChecked",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 801806152132219
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 275321191014658,
+							"parameters": {
+								"variable": "adjustedChecked"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 634530862655435,
+							"parameters": {
+								"instance-variable": "RadioTag",
+								"comparison": 0,
+								"value": "\"helpful\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 142952487694209,
+							"parameters": {
+								"instance-variable": "isChecked"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 175907934341675,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 214698702591854
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 437719736743500,
+					"parameters": {
+						"object": "RadioBorderLabelBelow"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 447538441583204,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 894439552250548,
+							"parameters": {
+								"layer": "RadioBorderLabelBelow.LayerName"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 172776937134273,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 900477817554787
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 967532588524337
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "RadioBorderLabelBelow",
+							"sid": 732817004360650,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 734930834554133
+				}
+			]
+		}
+	],
+	"sid": 555650473747143
+}

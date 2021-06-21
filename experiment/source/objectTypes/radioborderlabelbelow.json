@@ -1,0 +1,229 @@
+{
+	"name": "RadioBorderLabelBelow",
+	"plugin-id": "Sprite",
+	"sid": 348969135062993,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "RadioTag",
+			"type": "string",
+			"desc": "The tag of the radio button (only one button with the tag can be active)",
+			"sid": 645938658509931
+		},
+		{
+			"name": "RadioText",
+			"type": "string",
+			"desc": "The text of this radio button",
+			"sid": 938057573425045
+		},
+		{
+			"name": "isPressed",
+			"type": "boolean",
+			"desc": "",
+			"sid": 722593351139984
+		},
+		{
+			"name": "isChecked",
+			"type": "boolean",
+			"desc": "",
+			"sid": 421315672285917
+		},
+		{
+			"name": "RadioValue",
+			"type": "string",
+			"desc": "The value of the radio button",
+			"sid": 546191344757222
+		},
+		{
+			"name": "isDisabled",
+			"type": "boolean",
+			"desc": "",
+			"sid": 980368278096101
+		},
+		{
+			"name": "YFactor",
+			"type": "number",
+			"desc": "",
+			"sid": 681518310049241
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8662723,
+						"collisionPoly": {
+							"points": [
+								0.15384615384615385,
+								0.15384615384615385,
+								0.5,
+								0,
+								0.8205128205128205,
+								0.15384615384615385,
+								0.9743589743589743,
+								0.5,
+								0.8205128205128205,
+								0.8205128205128205,
+								0.5,
+								0.9743589743589743,
+								0.15384615384615385,
+								0.8205128205128205,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 424607884531130,
+				"name": "Empty",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9882446,
+						"collisionPoly": {
+							"points": [
+								0.15384615384615385,
+								0.15384615384615385,
+								0.5,
+								0,
+								0.8205128205128205,
+								0.15384615384615385,
+								0.9743589743589743,
+								0.5,
+								0.8205128205128205,
+								0.8205128205128205,
+								0.5,
+								0.9743589743589743,
+								0.15384615384615385,
+								0.8205128205128205,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 168480998463342,
+				"name": "Hovered",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8692342,
+						"collisionPoly": {
+							"points": [
+								0.15384615384615385,
+								0.15384615384615385,
+								0.5,
+								0,
+								0.8205128205128205,
+								0.15384615384615385,
+								0.9743589743589743,
+								0.5,
+								0.8205128205128205,
+								0.8205128205128205,
+								0.5,
+								0.9743589743589743,
+								0.15384615384615385,
+								0.8205128205128205,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 442552350651655,
+				"name": "Pressed",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7322,
+						"collisionPoly": {
+							"points": [
+								0.15384615384615385,
+								0.15384615384615385,
+								0.5,
+								0,
+								0.8205128205128205,
+								0.15384615384615385,
+								0.9743589743589743,
+								0.5,
+								0.8205128205128205,
+								0.8205128205128205,
+								0.5,
+								0.9743589743589743,
+								0.15384615384615385,
+								0.8205128205128205,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 943983630861706,
+				"name": "Disabled",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

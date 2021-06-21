@@ -1,0 +1,780 @@
+{
+	"name": "TaskE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "CurrentTaskIdx",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Index of the current task within this slid",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 759515570565135
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalNumberOfTasks",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Number of tasks for this slide",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 423978123222601
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "SyllogismE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"functionName": "PresentTask",
+			"functionDescription": "Presents the current task",
+			"functionCategory": "Task",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 902444550724081,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 965315654319731,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "placeholders",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 404257180364020
+				},
+				{
+					"eventType": "variable",
+					"name": "A",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 653529120729946
+				},
+				{
+					"eventType": "variable",
+					"name": "B",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 842814005824113
+				},
+				{
+					"eventType": "variable",
+					"name": "C",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 714827558616376
+				},
+				{
+					"eventType": "variable",
+					"name": "syllogism",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 591861475466228
+				},
+				{
+					"eventType": "variable",
+					"name": "syllogText",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 454043141315161
+				},
+				{
+					"eventType": "comment",
+					"text": "Load syllogism and placeholders"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 698262746028984,
+							"parameters": {
+								"variable": "syllogism",
+								"value": "tokenat(SyllogismTrainingList, CurrentTaskIdx, \";\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 550404033071266,
+							"parameters": {
+								"variable": "placeholders",
+								"value": "tokenat(SyllogismContents, CurrentTaskIdx, \";\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 595662179858593,
+							"parameters": {
+								"variable": "A",
+								"value": "tokenat(placeholders, 0, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 606672881435363,
+							"parameters": {
+								"variable": "B",
+								"value": "tokenat(placeholders, 1, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 276493309771170,
+							"parameters": {
+								"variable": "C",
+								"value": "tokenat(placeholders, 2, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 208532750542714,
+							"parameters": {
+								"variable": "syllogText",
+								"value": "Functions.GetTemplateForSyllogism(syllogism)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TaskText",
+							"sid": 651254777066842,
+							"parameters": {
+								"text": "\"Task \" & str(CurrentTaskIdx + 1) & \"/64\""
+							}
+						}
+					],
+					"sid": 480962553978937,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Create text"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "TaskPresentation",
+									"sid": 147788777661727,
+									"parameters": {
+										"text": "replace(replace(replace(syllogText, \"AAA\", A), \"BBB\", B), \"CCC\", C)"
+									}
+								}
+							],
+							"sid": 860167994550526
+						},
+						{
+							"eventType": "comment",
+							"text": "Create response options"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 563306166679127,
+									"parameters": {
+										"object": "Button"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 958573236011291,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "ResponseTemplate",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 980026321859241
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 960079345337495,
+											"parameters": {
+												"variable": "ResponseTemplate",
+												"value": "Functions.GetResponseTemplate(Button.ButtonTag)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Button",
+											"sid": 110220597615308,
+											"parameters": {
+												"instance-variable": "ButtonText",
+												"value": "replace(replace(ResponseTemplate, \"AAA\", A), \"CCC\", C)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 397229439723759,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 100246044289160
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "RefreshButtonTexts",
+									"sid": 280971274750263
+								}
+							],
+							"sid": 189489409468666
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 987765787563899
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 340971899455279,
+					"parameters": {
+						"variable": "TotalNumberOfTasks",
+						"value": "tokencount(SyllogismTrainingList, \";\")"
+					}
+				}
+			],
+			"sid": 929913158670159,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Create the correct button labels"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 687304582195067,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Button",
+							"sid": 701481312525783,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"value": "tokenat(ResponseOrdering, int(Button.ButtonTag), \";\")"
+							}
+						}
+					],
+					"sid": 249802088991484
+				},
+				{
+					"eventType": "comment",
+					"text": "Present first task"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "PresentTask",
+							"sid": 599155291002183
+						}
+					],
+					"sid": 606350791395305
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When a response is selected"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 550296411621391,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 881698061416455
+				}
+			],
+			"actions": [],
+			"sid": 587952409405998,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "syllogism",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 802393500120485
+				},
+				{
+					"eventType": "variable",
+					"name": "response",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 805097701556022
+				},
+				{
+					"eventType": "comment",
+					"text": "prepare the data"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 369049030450274,
+							"parameters": {
+								"variable": "syllogism",
+								"value": "tokenat(SyllogismTrainingList, CurrentTaskIdx, \";\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 622527004623906,
+							"parameters": {
+								"variable": "response",
+								"value": "Button.ButtonTag"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 906141117272544,
+							"parameters": {
+								"path": "\"time\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 138408237702142,
+							"parameters": {
+								"path": "\"unfocused\"",
+								"value": "TotalTimeUnfocused"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 967791288412788,
+							"parameters": {
+								"path": "\"task_idx\"",
+								"value": "CurrentTaskIdx"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 691868833899438,
+							"parameters": {
+								"path": "\"syllogism\"",
+								"value": "syllogism"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 233054346509350,
+							"parameters": {
+								"path": "\"placeholders\"",
+								"value": "tokenat(SyllogismContents, CurrentTaskIdx, \";\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 679233621868848,
+							"parameters": {
+								"path": "\"response\"",
+								"value": "response"
+							}
+						}
+					],
+					"sid": 789940609740735
+				},
+				{
+					"eventType": "comment",
+					"text": "Disable all buttons"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 430340414989917,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 403854607018690,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 766478166019979
+				},
+				{
+					"eventType": "comment",
+					"text": "If the response was correct, show feedback"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 953451581861594,
+							"parameters": {
+								"first-value": "Functions.IsCorrectResponse(syllogism, response)",
+								"comparison": 0,
+								"second-value": "1"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 349026961047584,
+							"parameters": {
+								"variable": "isFeedbackCondition"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 113721758944186,
+							"parameters": {
+								"layer": "\"IsCorrect\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 221254703136978,
+							"parameters": {
+								"seconds": "FeedbackDuration"
+							}
+						},
+						{
+							"callFunction": "SaveData",
+							"sid": 354617881905843,
+							"parameters": [
+								"JSON.ToCompactString"
+							]
+						}
+					],
+					"sid": 291284342701101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 625535517845107
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 333917182699581,
+							"parameters": {
+								"variable": "isFeedbackCondition"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 949953808660241,
+							"parameters": {
+								"layer": "\"IsIncorrect\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 894821586560703,
+							"parameters": {
+								"seconds": "FeedbackDuration"
+							}
+						},
+						{
+							"callFunction": "SaveData",
+							"sid": 769448353858736,
+							"parameters": [
+								"JSON.ToCompactString"
+							]
+						}
+					],
+					"sid": 262201294138587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 253438239571634
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "SaveData",
+							"sid": 644949346246359,
+							"parameters": [
+								"JSON.ToCompactString"
+							]
+						}
+					],
+					"sid": 416058583982062
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When saving the response is finished"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 304990915843070,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 192884665264837
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 923305848316774,
+					"parameters": {
+						"layer": "\"IsIncorrect\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 192278891080062,
+					"parameters": {
+						"layer": "\"IsCorrect\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 158689338172084,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 344176123926963,
+					"parameters": {
+						"data": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 663272162631764,
+					"parameters": {
+						"variable": "ResponseTime",
+						"value": "0"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 364039716179613,
+					"parameters": {
+						"slot": "\"resumeSlot\""
+					}
+				}
+			],
+			"sid": 730387641040343,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Prepare the next task"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 110158698648103,
+							"parameters": {
+								"variable": "CurrentTaskIdx",
+								"comparison": 2,
+								"value": "TotalNumberOfTasks -1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 802692035493740,
+							"parameters": {
+								"variable": "CurrentTaskIdx",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "PresentTask",
+							"sid": 719536215532131
+						}
+					],
+					"sid": 627738665779001
+				},
+				{
+					"eventType": "comment",
+					"text": "Finish the part and carry on with the experiment"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 872315501417634
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 443854884394626,
+							"parameters": {
+								"layout": "StartConfidenceInstruction"
+							}
+						}
+					],
+					"sid": 689997681243117
+				}
+			]
+		}
+	],
+	"sid": 182637278533809
+}

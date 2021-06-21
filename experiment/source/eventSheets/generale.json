@@ -1,0 +1,203 @@
+{
+	"name": "GeneralE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ResponseTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "The time used in this slide in sec",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 209786044353339
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalTimeUnfocused",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "The total time in milliseconds that the experiment was not active",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 624877173516697
+		},
+		{
+			"eventType": "variable",
+			"name": "isSuspended",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 177435665899408
+		},
+		{
+			"eventType": "variable",
+			"name": "suspensionTimestamp",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Timestamp before suspending",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 476061879768411
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 522758472636889
+				}
+			],
+			"actions": [
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 488466375339760,
+					"parameters": {
+						"data": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 382627749392688,
+					"parameters": {
+						"variable": "ResponseTime",
+						"value": "0"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 796350704138139,
+					"parameters": {
+						"slot": "\"resumeSlot\""
+					}
+				}
+			],
+			"sid": 390745587295414
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 550396307938390
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 166853993335209,
+					"parameters": {
+						"variable": "ResponseTime",
+						"value": "dt"
+					}
+				}
+			],
+			"sid": 752644523131528
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-save-complete",
+					"objectClass": "System",
+					"sid": 834998512217874
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 415438028003531,
+					"parameters": {
+						"key": "\"canLoad\"",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 170611762097591,
+					"parameters": {
+						"key": "\"lastSaveDate\"",
+						"value": "Date.Now"
+					}
+				}
+			],
+			"sid": 875020468894360
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-suspend",
+					"objectClass": "System",
+					"sid": 932789698664084
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 407359820223397,
+					"parameters": {
+						"variable": "suspensionTimestamp",
+						"value": "Date.Now"
+					}
+				}
+			],
+			"sid": 917551661035880
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-resume",
+					"objectClass": "System",
+					"sid": 340227784388276
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 845188418655922,
+					"parameters": {
+						"variable": "TotalTimeUnfocused",
+						"value": "Date.GetSeconds(Date.Difference(suspensionTimestamp, Date.Now))"
+					}
+				}
+			],
+			"sid": 423142925528161
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-load-complete",
+					"objectClass": "System",
+					"sid": 861226869554797
+				}
+			],
+			"actions": [
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 303192607204849,
+					"parameters": {
+						"path": "\"resumed\"",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 514735221416661
+		}
+	],
+	"sid": 867007327959225
+}

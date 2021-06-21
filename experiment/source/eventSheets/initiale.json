@@ -1,0 +1,441 @@
+{
+	"name": "InitialE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "MAX_NUM_RETRIES",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "The maximum number of retries allowed before the experiment fails",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 643476430312917
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 704881151769274
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "InitProlificId",
+					"sid": 905005261996215
+				},
+				{
+					"id": "load-stylesheet",
+					"objectClass": "Browser",
+					"sid": 154364291362951,
+					"parameters": {
+						"url": "\"file.css\""
+					}
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 866789312773209,
+					"parameters": {
+						"tag": "\"fol\"",
+						"file": "folResponses.json"
+					}
+				}
+			],
+			"sid": 480928788579744
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 441296652224700,
+					"parameters": {
+						"key": "\"canLoad\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 958353257474696,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"sid": 698692536573634
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 514487258116359,
+					"parameters": {
+						"key": "\"canLoad\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 356859866658457,
+					"parameters": {
+						"layout": "Consent"
+					}
+				}
+			],
+			"sid": 552771600816496
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 722257073001164,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 803646008816376,
+					"parameters": {
+						"key": "\"lastSaveDate\""
+					}
+				}
+			],
+			"sid": 862289150108744
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 842864974068342,
+					"parameters": {
+						"key": "\"lastSaveDate\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 102151796030165,
+					"parameters": {
+						"layout": "ResumeError"
+					}
+				}
+			],
+			"sid": 129221795529824
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 456674037685307,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 438032801083188,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"sid": 124454302159693
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 469351019032992,
+					"parameters": {
+						"key": "\"lastSaveDate\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 834697733751446,
+					"parameters": {
+						"key": "\"lastSaveDate\""
+					}
+				}
+			],
+			"sid": 762408989571946
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 748553305796429,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 710000198708569,
+					"parameters": {
+						"type": "log",
+						"message": "\"Number of retries: \" & int(LocalStorage.ItemValue)"
+					}
+				}
+			],
+			"sid": 271692669717281,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 498143721864127,
+							"parameters": {
+								"first-value": "int(LocalStorage.ItemValue)",
+								"comparison": 2,
+								"second-value": "MAX_NUM_RETRIES"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 100279436780215,
+							"parameters": {
+								"key": "\"lastSaveDate\""
+							}
+						}
+					],
+					"sid": 317255952482158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 155790135067221
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 821350164799234,
+							"parameters": {
+								"layout": "ResumeError"
+							}
+						}
+					],
+					"sid": 128774056569130
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 265047983354447,
+					"parameters": {
+						"key": "\"lastSaveDate\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 534402268019858,
+					"parameters": {
+						"type": "log",
+						"message": "\"Time since leaving: \" & Date.GetSeconds(Date.Difference(LocalStorage.ItemValue, Date.Now))"
+					}
+				},
+				{
+					"id": "log",
+					"objectClass": "Browser",
+					"sid": 546921381337167,
+					"parameters": {
+						"type": "log",
+						"message": "\"Timestamp: \" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 501472550771677,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 617563489925617,
+							"parameters": {
+								"first-value": "Date.GetSeconds(Date.Difference(LocalStorage.ItemValue, Date.Now))",
+								"comparison": 2,
+								"second-value": "600"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 750360425732132,
+							"parameters": {
+								"type": "log",
+								"message": "\"Allowing resume due to short time\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 256573151030010,
+							"parameters": {
+								"layout": "ResumeExperiment"
+							}
+						}
+					],
+					"sid": 668080788900327
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 363683090809133
+						}
+					],
+					"actions": [
+						{
+							"id": "log",
+							"objectClass": "Browser",
+							"sid": 953353820170075,
+							"parameters": {
+								"type": "log",
+								"message": "\"Time expired\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 308485723987729,
+							"parameters": {
+								"layout": "ResumeError"
+							}
+						}
+					],
+					"sid": 691561876354324
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 623671244625360,
+					"parameters": {
+						"tag": "\"fol\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "FOLResponses",
+					"sid": 832054307238571,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 193070902763374,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-preview",
+							"objectClass": "System",
+							"sid": 777548719659437
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 351236693755764,
+							"parameters": {
+								"layout": "Consent"
+							}
+						}
+					],
+					"sid": 436580754939499
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 571047379633842
+						}
+					],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 864251045309388,
+							"parameters": {
+								"key": "\"canLoad\""
+							}
+						}
+					],
+					"sid": 875453855592817
+				}
+			]
+		}
+	],
+	"sid": 651161601690605
+}

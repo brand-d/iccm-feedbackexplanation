@@ -1,0 +1,43 @@
+{
+	"name": "ResumeErrorE",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 918228043460762
+				}
+			],
+			"actions": [
+				{
+					"id": "remove-item",
+					"objectClass": "LocalStorage",
+					"sid": 661962000825345,
+					"parameters": {
+						"key": "\"canLoad\""
+					}
+				},
+				{
+					"id": "remove-item",
+					"objectClass": "LocalStorage",
+					"sid": 674077689539634,
+					"parameters": {
+						"key": "\"lastSaveDate\""
+					}
+				},
+				{
+					"id": "remove-item",
+					"objectClass": "LocalStorage",
+					"sid": 285175098172469,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"sid": 193222258621845
+		}
+	],
+	"sid": 166658613220705
+}

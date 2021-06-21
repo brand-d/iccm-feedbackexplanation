@@ -1,0 +1,1005 @@
+{
+	"name": "TaskConfidenceE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "TrainingSize",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "The number of training syllogisms",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 854867923909895
+		},
+		{
+			"eventType": "variable",
+			"name": "SelectedAnswer",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 947467520845703
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "SyllogismE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"functionName": "PresentTaskConfidence",
+			"functionDescription": "Presents the current task",
+			"functionCategory": "Task",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "SliderScale",
+					"sid": 934065431301590,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "SliderScale",
+					"sid": 938475810595377,
+					"parameters": {
+						"instance-variable": "currentValue",
+						"value": "50"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ConfidenceText",
+					"sid": 372244866692883,
+					"parameters": {
+						"text": "\"Confidence: \" & SliderScale.currentValue & \"%\""
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 252851457607153,
+					"parameters": {
+						"layer": "\"ConfidenceLayer\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 232371148143595,
+					"parameters": {
+						"layer": "\"TaskLayer\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 581141170632570,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 903095901389709,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"comparison": 0,
+								"value": "\"Continue\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 491400747035883,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 963937041310516
+				},
+				{
+					"eventType": "variable",
+					"name": "placeholders",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 437913082661730
+				},
+				{
+					"eventType": "variable",
+					"name": "A",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 745273963111413
+				},
+				{
+					"eventType": "variable",
+					"name": "B",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 806842768836619
+				},
+				{
+					"eventType": "variable",
+					"name": "C",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 480552368923333
+				},
+				{
+					"eventType": "variable",
+					"name": "syllogism",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 855612088017995
+				},
+				{
+					"eventType": "variable",
+					"name": "syllogText",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 101330081306325
+				},
+				{
+					"eventType": "comment",
+					"text": "Load syllogism and placeholders"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 346693090943333,
+							"parameters": {
+								"variable": "syllogism",
+								"value": "tokenat(SyllogismTestList, CurrentTaskIdx - TrainingSize, \";\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 650798181024009,
+							"parameters": {
+								"variable": "placeholders",
+								"value": "tokenat(SyllogismContents, CurrentTaskIdx, \";\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 823734610639906,
+							"parameters": {
+								"variable": "A",
+								"value": "tokenat(placeholders, 0, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 811272977789825,
+							"parameters": {
+								"variable": "B",
+								"value": "tokenat(placeholders, 1, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 205635295501267,
+							"parameters": {
+								"variable": "C",
+								"value": "tokenat(placeholders, 2, \",\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 572621000232430,
+							"parameters": {
+								"variable": "syllogText",
+								"value": "Functions.GetTemplateForSyllogism(syllogism)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TaskText",
+							"sid": 447018676082476,
+							"parameters": {
+								"text": "\"Task \" & str(CurrentTaskIdx + 1) & \"/64\""
+							}
+						}
+					],
+					"sid": 877338744573577,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Create text"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "TaskPresentation",
+									"sid": 209865850144408,
+									"parameters": {
+										"text": "replace(replace(replace(syllogText, \"AAA\", A), \"BBB\", B), \"CCC\", C)"
+									}
+								}
+							],
+							"sid": 920452074107435
+						},
+						{
+							"eventType": "comment",
+							"text": "Create response options"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 567763757021020,
+									"parameters": {
+										"object": "Button"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 741823197917014,
+							"children": [
+								{
+									"eventType": "variable",
+									"name": "ResponseTemplate",
+									"type": "string",
+									"initialValue": "",
+									"comment": "",
+									"isStatic": false,
+									"isConstant": false,
+									"sid": 140552936697575
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Button",
+											"sid": 232392038342023,
+											"parameters": {
+												"instance-variable": "ButtonTag",
+												"comparison": 1,
+												"value": "\"Continue\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 435838884739580,
+											"parameters": {
+												"variable": "ResponseTemplate",
+												"value": "Functions.GetResponseTemplate(Button.ButtonTag)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Button",
+											"sid": 474997749977083,
+											"parameters": {
+												"instance-variable": "ButtonText",
+												"value": "replace(replace(ResponseTemplate, \"AAA\", A), \"CCC\", C)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 226702386896344,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 400110033354446
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "RefreshButtonTexts",
+									"sid": 225028633063083
+								}
+							],
+							"sid": 652510489360529
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "If a button is selected,make the slider available"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 449435045657594,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 523032127951330,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 1,
+						"value": "\"Continue\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 457905158819794
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 382204228131245,
+					"parameters": {
+						"variable": "SelectedAnswer",
+						"value": "Button.ButtonTag"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 482332421704747,
+					"parameters": {
+						"path": "\"task_idx\"",
+						"value": "CurrentTaskIdx"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 568176954541060,
+					"parameters": {
+						"path": "\"syllog_time\"",
+						"value": "ResponseTime"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 414706280058581,
+					"parameters": {
+						"variable": "ResponseTime",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ConclusionText",
+					"sid": 578783371767308,
+					"parameters": {
+						"text": "\"Your answer: \" & Button.ButtonText"
+					}
+				}
+			],
+			"sid": 546431830485156,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 716788531165996,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 633160237133513,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 315867984961551,
+									"parameters": {
+										"object": "Button"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 790736431192852,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Button",
+											"sid": 362675981068809,
+											"parameters": {
+												"instance-variable": "ButtonTag",
+												"comparison": 0,
+												"value": "\"Continue\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 826255943432092,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 840269408514495
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 209855001880873
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 754792908939972,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 611763183286302
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "SliderScale",
+							"sid": 658892733632504,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 879547743933189,
+							"parameters": {
+								"layer": "\"ConfidenceLayer\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 317194882866447,
+							"parameters": {
+								"layer": "\"TaskLayer\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 585589754189965
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 347805535398311
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 971383938815383,
+					"parameters": {
+						"variable": "TotalNumberOfTasks",
+						"value": "tokencount(SyllogismTestList, \";\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 950678083132580,
+					"parameters": {
+						"variable": "CurrentTaskIdx",
+						"value": "tokencount(SyllogismTrainingList, \";\")"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 545081780260168,
+					"parameters": {
+						"variable": "TrainingSize",
+						"value": "tokencount(SyllogismTrainingList, \";\")"
+					}
+				}
+			],
+			"sid": 365566114035864,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Create the correct button labels"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 440151509243872,
+							"parameters": {
+								"object": "Button"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 276157905395433,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"comparison": 1,
+								"value": "\"Continue\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Button",
+							"sid": 427923159977010,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"value": "tokenat(ResponseOrdering, int(Button.ButtonTag), \";\")"
+							}
+						}
+					],
+					"sid": 926463837667523
+				},
+				{
+					"eventType": "comment",
+					"text": "Present first task"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "PresentTaskConfidence",
+							"sid": 313374766732125
+						}
+					],
+					"sid": 840049112275126
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Show current value on slider"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "SliderScale",
+					"sid": 873049860771454,
+					"parameters": {
+						"instance-variable": "isDisabled"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ConfidenceText",
+					"sid": 802209248437161,
+					"parameters": {
+						"text": "\"Confidence: \" & SliderScale.currentValue & \"%\""
+					}
+				}
+			],
+			"sid": 367482090873005,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "comment",
+			"text": "When continue is pressed"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 218955621300360,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 147062893909014,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Continue\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 582016039317160
+				}
+			],
+			"actions": [],
+			"sid": 560925184704109,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "syllogism",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 546465106241926
+				},
+				{
+					"eventType": "variable",
+					"name": "response",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 987402788594746
+				},
+				{
+					"eventType": "comment",
+					"text": "prepare the data"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 933425242961589,
+							"parameters": {
+								"variable": "syllogism",
+								"value": "tokenat(SyllogismTestList, CurrentTaskIdx - TrainingSize, \";\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 266329041223302,
+							"parameters": {
+								"variable": "response",
+								"value": "SelectedAnswer"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 755604208170981,
+							"parameters": {
+								"path": "\"confidence_time\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 782316545473483,
+							"parameters": {
+								"path": "\"unfocused\"",
+								"value": "TotalTimeUnfocused"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 714880613624249,
+							"parameters": {
+								"path": "\"syllogism\"",
+								"value": "syllogism"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 111286887065001,
+							"parameters": {
+								"path": "\"placeholders\"",
+								"value": "tokenat(SyllogismContents, CurrentTaskIdx, \";\")"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 691927249931977,
+							"parameters": {
+								"path": "\"response\"",
+								"value": "response"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 737793045886692,
+							"parameters": {
+								"path": "\"confidence\"",
+								"value": "SliderScale.currentValue"
+							}
+						}
+					],
+					"sid": 726159513713302
+				},
+				{
+					"eventType": "comment",
+					"text": "Disable all buttons"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-all",
+							"objectClass": "System",
+							"sid": 564879991855031,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "SliderScale",
+							"sid": 755179823910490,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Button",
+							"sid": 851190452611135,
+							"parameters": {
+								"instance-variable": "isDisabled",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 817196517352158
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "SaveData",
+							"sid": 142047070252212,
+							"parameters": [
+								"JSON.ToCompactString"
+							]
+						}
+					],
+					"sid": 543243018072631
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "When saving the response is finished"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 166444110309369,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 345425474863861
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 850619132860195,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "parse",
+					"objectClass": "JSON",
+					"sid": 925882441698477,
+					"parameters": {
+						"data": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 197779404174791,
+					"parameters": {
+						"variable": "ResponseTime",
+						"value": "0"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 698094888793891,
+					"parameters": {
+						"slot": "\"resumeSlot\""
+					}
+				}
+			],
+			"sid": 415885695120302,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Prepare the next task"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 702513692892964,
+							"parameters": {
+								"first-value": "CurrentTaskIdx - TrainingSize",
+								"comparison": 2,
+								"second-value": "TotalNumberOfTasks - 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 423100569650789,
+							"parameters": {
+								"variable": "CurrentTaskIdx",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "PresentTaskConfidence",
+							"sid": 920898732817763
+						}
+					],
+					"sid": 385619515595638
+				},
+				{
+					"eventType": "comment",
+					"text": "Finish the part and carry on with the experiment"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 973719272719150
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 488705023546211,
+							"parameters": {
+								"layout": "FinalSurvey"
+							}
+						}
+					],
+					"sid": 147885225743845
+				}
+			]
+		}
+	],
+	"sid": 371127075806946
+}

@@ -1,0 +1,62 @@
+{
+	"name": "FinishE",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 111056385250157,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 751750340120706,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Finish\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 671175334029132
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 132223184161045,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "FinishExperiment",
+					"sid": 888180973317002
+				}
+			],
+			"sid": 655074822398937
+		}
+	],
+	"sid": 696322158415865
+}

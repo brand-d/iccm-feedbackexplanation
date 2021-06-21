@@ -1,0 +1,230 @@
+{
+	"name": "ResumeE",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 797219151588865,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 349525005763666,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Resume\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 650046769322966
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 293901542318257,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "load",
+					"objectClass": "System",
+					"sid": 195033392394455,
+					"parameters": {
+						"slot": "\"resumeSlot\""
+					}
+				}
+			],
+			"sid": 390279298759652
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 340407696798376,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 629774661630477,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Cancel\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 298747441528413
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 164217114279700,
+					"parameters": {
+						"layout": "ResumeError"
+					}
+				}
+			],
+			"sid": 194734598029970
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 628364840036143
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 394204612426191,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 268984385916740,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"sid": 651302877019368
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 785741173716525,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 590177840845187,
+					"parameters": {
+						"key": "\"numRetries\"",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 767753281757039
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-set",
+					"objectClass": "LocalStorage",
+					"sid": 310774701458445,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 716988107509022,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 101440307683725
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 283338368602140,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 423042586955911,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"sid": 841006990185427
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 448742967439846,
+					"parameters": {
+						"key": "\"numRetries\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 355945599839087,
+					"parameters": {
+						"key": "\"numRetries\"",
+						"value": "1 + int(LocalStorage.ItemValue)"
+					}
+				}
+			],
+			"sid": 831062331368721
+		}
+	],
+	"sid": 506996222860600
+}

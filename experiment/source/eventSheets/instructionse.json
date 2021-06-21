@@ -1,0 +1,734 @@
+{
+	"name": "InstructionsE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "isFeedbackCondition",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "If True, feedback is shown after each task",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 762068867372570
+		},
+		{
+			"eventType": "variable",
+			"name": "FeedbackDuration",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Time in seconds to show feedback",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 177795437597475
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "SyllogismE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 760241082994577,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 359864897000660
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 394497133660157,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 714259524312938,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Button",
+							"sid": 526183262243930,
+							"parameters": {
+								"instance-variable": "ButtonTag",
+								"comparison": 0,
+								"value": "\"Continue\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 962840965086309,
+							"parameters": {
+								"path": "\"condition\"",
+								"value": "isFeedbackCondition ? \"feedback\" : \"control\""
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 284705428325266,
+							"parameters": {
+								"path": "\"first_time\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 344915242967245,
+							"parameters": {
+								"variable": "ResponseTime",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 735983581948316,
+							"parameters": {
+								"layer": "\"FirstInstructions\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 644695300869092,
+							"parameters": {
+								"layer": "\"SecondInstructions\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 238955263518746,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 401121011660973,
+									"parameters": {
+										"object": "Button"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 294399637974134,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Button",
+											"sid": 327799849584282,
+											"parameters": {
+												"instance-variable": "ButtonTag",
+												"comparison": 1,
+												"value": "\"Continue\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Button",
+											"sid": 257984089690440,
+											"parameters": {
+												"instance-variable": "isDisabled",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 679016133866682
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 729890660778929
+						}
+					],
+					"actions": [
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 388962002351928,
+							"parameters": {
+								"path": "\"second_time\"",
+								"value": "ResponseTime"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 265302857384171,
+							"parameters": {
+								"path": "\"unfocused\"",
+								"value": "TotalTimeUnfocused"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 168574368448454,
+							"parameters": {
+								"path": "\"response\"",
+								"value": "Button.ButtonTag"
+							}
+						},
+						{
+							"id": "set-value",
+							"objectClass": "JSON",
+							"sid": 286964120469487,
+							"parameters": {
+								"path": "\"response_order\"",
+								"value": "replace(ResponseOrdering, \";\", \",\")"
+							}
+						}
+					],
+					"sid": 122658360228110,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 228205305243080,
+									"parameters": {
+										"variable": "isFeedbackCondition"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 342057581427220,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Button",
+											"sid": 230221250412403,
+											"parameters": {
+												"instance-variable": "ButtonTag",
+												"comparison": 0,
+												"value": "\"Iac\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Button",
+											"sid": 140842324576241,
+											"parameters": {
+												"instance-variable": "ButtonTag",
+												"comparison": 0,
+												"value": "\"Ica\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 191715322508967,
+											"parameters": {
+												"layer": "\"IsCorrect\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 492292806581372,
+											"parameters": {
+												"seconds": "FeedbackDuration"
+											}
+										},
+										{
+											"callFunction": "SaveData",
+											"sid": 693840980165268,
+											"parameters": [
+												"JSON.ToCompactString"
+											]
+										}
+									],
+									"sid": 381440874390884,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 899843441838585
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 132158387604628,
+											"parameters": {
+												"layer": "\"IsIncorrect\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 485876467547149,
+											"parameters": {
+												"seconds": "FeedbackDuration"
+											}
+										},
+										{
+											"callFunction": "SaveData",
+											"sid": 219603993551387,
+											"parameters": [
+												"JSON.ToCompactString"
+											]
+										}
+									],
+									"sid": 411819728215631
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 993079948972296
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "SaveData",
+									"sid": 615763080402866,
+									"parameters": [
+										"JSON.ToCompactString"
+									]
+								}
+							],
+							"sid": 368181952918598
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-all",
+									"objectClass": "System",
+									"sid": 356940229295776,
+									"parameters": {
+										"object": "Button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 673871574590210,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 180278145276491
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 186888035290606,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 348984216974894
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 268997351835544,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 166142852304037,
+					"parameters": {
+						"layout": "Instructions2"
+					}
+				}
+			],
+			"sid": 338057276838356
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 797779988871403
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 941131986128049,
+					"parameters": {
+						"layer": "\"FirstInstructions\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 725417669683699,
+					"parameters": {
+						"layer": "\"SecondInstructions\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 988647741431263,
+					"parameters": {
+						"layer": "\"IsCorrect\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 399283145165005,
+					"parameters": {
+						"layer": "\"IsIncorrect\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 214274504258727,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 364085563445889,
+							"parameters": {
+								"variable": "FeedbackCondition",
+								"comparison": 0,
+								"value": "\"control\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 423506586986568,
+							"parameters": {
+								"variable": "isFeedbackCondition",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "InstructionFeedback",
+							"sid": 360461049801996,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "InstructionControl",
+							"sid": 414246941969185,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 680810128752068
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 256160343240453
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 621353114003901,
+							"parameters": {
+								"variable": "FeedbackCondition",
+								"comparison": 0,
+								"value": "\"feedback\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 918485174829815,
+							"parameters": {
+								"variable": "isFeedbackCondition",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "InstructionFeedback",
+							"sid": 340405295702825,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "InstructionControl",
+							"sid": 131932437170856,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 200191520714378
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 184828922394066
+						}
+					],
+					"actions": [],
+					"sid": 363472463090021,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 331223119477234,
+									"parameters": {
+										"first-value": "choose(0, 1)",
+										"comparison": 5,
+										"second-value": "0.5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 799592379741400,
+									"parameters": {
+										"variable": "isFeedbackCondition",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "InstructionFeedback",
+									"sid": 317724036194106,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "InstructionControl",
+									"sid": 413167633251326,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 722517062543429
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 215138580382874
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 604542039093789,
+									"parameters": {
+										"variable": "isFeedbackCondition",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "InstructionFeedback",
+									"sid": 830254973033250,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "InstructionControl",
+									"sid": 628496919493053,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 498029509740580
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 595844432952523,
+							"parameters": {
+								"object": "Button"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 248468307027425,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Button",
+									"sid": 299815310682793,
+									"parameters": {
+										"instance-variable": "ButtonTag",
+										"comparison": 1,
+										"value": "\"Continue\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Button",
+									"sid": 345481099766789,
+									"parameters": {
+										"instance-variable": "isDisabled",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Button",
+									"sid": 788707753307216,
+									"parameters": {
+										"instance-variable": "ButtonTag",
+										"value": "tokenat(ResponseOrdering, int(Button.ButtonTag), \";\")"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Button",
+									"sid": 209567253675607,
+									"parameters": {
+										"instance-variable": "ButtonText",
+										"value": "replace(replace(Functions.GetResponseTemplate(Button.ButtonTag), \"AAA\", \"tailors\"), \"CCC\", \"teachers\")"
+									}
+								}
+							],
+							"sid": 933007110484806
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"callFunction": "RefreshButtonTexts",
+							"sid": 731805382098942
+						}
+					],
+					"sid": 182905487246198
+				}
+			]
+		}
+	],
+	"sid": 870465552897880
+}

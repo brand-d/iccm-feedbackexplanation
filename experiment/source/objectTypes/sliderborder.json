@@ -1,0 +1,57 @@
+{
+	"name": "SliderBorder",
+	"plugin-id": "Sprite",
+	"sid": 735345594423397,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 306,
+						"height": 10,
+						"originX": 0.5,
+						"originY": 1.4,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 546666,
+						"collisionPoly": {
+							"points": [
+								0.0032679738562091504,
+								0.1,
+								0.5,
+								0,
+								0.9934640522875817,
+								0.1,
+								0.9967320261437909,
+								0.5,
+								0.9934640522875817,
+								0.8,
+								0.5,
+								0.9,
+								0.0032679738562091504,
+								0.8,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 736246379158858,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

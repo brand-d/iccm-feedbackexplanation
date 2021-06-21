@@ -1,0 +1,180 @@
+{
+	"name": "ConfidenceInstructionE",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "ButtonE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "GeneralE"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "WebserverE"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Button",
+					"sid": 814448845161083,
+					"parameters": {
+						"instance-variable": "isFiring"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Button",
+					"sid": 266965476852312,
+					"parameters": {
+						"instance-variable": "ButtonTag",
+						"comparison": 0,
+						"value": "\"Continue\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 599748283284709
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Button",
+					"sid": 196267503922210,
+					"parameters": {
+						"instance-variable": "isDisabled",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 201917068360969,
+					"parameters": {
+						"path": "\"time\"",
+						"value": "ResponseTime"
+					}
+				},
+				{
+					"id": "set-value",
+					"objectClass": "JSON",
+					"sid": 193614918300044,
+					"parameters": {
+						"path": "\"unfocused\"",
+						"value": "TotalTimeUnfocused"
+					}
+				},
+				{
+					"callFunction": "SaveData",
+					"sid": 750895319441697,
+					"parameters": [
+						"JSON.ToCompactString"
+					]
+				}
+			],
+			"sid": 427060613136429
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 862686580793055,
+					"parameters": {
+						"variable": "dataSaved"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 785023471108030
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 246623727992417,
+					"parameters": {
+						"variable": "dataSaved",
+						"value": "false"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 406355638878737,
+					"parameters": {
+						"layout": "TaskConfidence"
+					}
+				}
+			],
+			"sid": 144678951569142
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 438536900621914,
+					"parameters": {
+						"variable": "isFeedbackCondition"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 622840099377783
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "NoMoreFeedbackText",
+					"sid": 254543527019653,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 357139577972064
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 844323755178534,
+					"parameters": {
+						"variable": "isFeedbackCondition"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 584671932748171
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "NoMoreFeedbackText",
+					"sid": 549640983257896,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 262392914592231
+		}
+	],
+	"sid": 934007778593322
+}

@@ -1,0 +1,1294 @@
+{
+	"name": "SyllogismE",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "ResponseOrdering",
+			"type": "string",
+			"initialValue": "",
+			"comment": "String representing the order of the response options",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 586031206093045
+		},
+		{
+			"eventType": "variable",
+			"name": "SyllogismTrainingList",
+			"type": "string",
+			"initialValue": "AA1;AA2;AA3;AE1;AE3;AE4;AI1;AI2;AI3;AI4;AO1;AO2;AO4;EA2;EA3;EA4;EE1;EE3;EE4;EI2;EI3;EI4;EO1;EO2;EO4;IA1;IA2;IA3;IE1;IE2;IE3;II1;II2;II3;IO1;IO2;IO4;OA1;OA4;OE2;OE3;OE4;OI1;OI2;OI4;OO2;OO3;OO4",
+			"comment": "List with all syllogisms for the training phase",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 389627504362122
+		},
+		{
+			"eventType": "variable",
+			"name": "SyllogismTestList",
+			"type": "string",
+			"initialValue": "EE2;EO3;II4;IO3;OA2;OE1;OI3;OO1;AA4;AE2;AO3;EA1;EI1;IA4;IE4;OA3",
+			"comment": "The list of syllogisms used to ask for confidences",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 658521945729766
+		},
+		{
+			"eventType": "variable",
+			"name": "SyllogismContents",
+			"type": "string",
+			"initialValue": "teachers,golfers,bankers;actors,painters,workers;lifeguards,dentists,plumbers;students,cyclists,buyers;carpenters,linguists,divers;doctors,tellers,climbers;surfers,planners,artists;dancers,boxers,typists;soldiers,editors,florists;farmers,assistants,scholars;investors,jugglers,barbers;sculptors,bakers,gamblers;chemists,potters,sailors;poets,skaters,miners;drivers,writers,hikers;tailors,pilots,singers;packers,tutors,butchers;judges,porters,brewers;lawyers,athletes,hunters;nurses,actors,drillers;mayors,cooks,swimmers;auditors,cleaners,painters;managers,clerks,models;poets,waiters,cashiers;secretaries,agents,brokers;therapists,climbers,skaters;campers,engineers,fencers;analysts,novelists,travelers;riders,counselors,joggers;boxers,actuaries,opticians;trainers,architects,designers;scientists,chefs,runners;teachers,painters,plumbers;actors,dentists,buyers;lifeguards,cyclists,divers;students,linguists,climbers;carpenters,tellers,artists;doctors,planners,typists;surfers,boxers,florists;dancers,editors,scholars;soldiers,assistants,barbers;farmers,jugglers,gamblers;investors,bakers,sailors;sculptors,potters,miners;chemists,skaters,hikers;poets,writers,singers;drivers,pilots,butchers;tailors,tutors,brewers;packers,porters,hunters;judges,athletes,drillers;lawyers,actors,swimmers;nurses,cooks,painters;mayors,cleaners,models;auditors,clerks,cashiers;managers,waiters,brokers;poets,agents,skaters;secretaries,climbers,fencers;therapists,engineers,travelers;campers,novelists,joggers;analysts,counselors,opticians;riders,actuaries,designers;boxers,architects,runners;trainers,chefs,bankers;scientists,golfers,workers",
+			"comment": "List with syllogism content triples",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 203943236893806
+		},
+		{
+			"functionName": "GetTemplateForSyllogism",
+			"functionDescription": "Returns a template containing AAA, BBB and CCC for a given syllogism (premises are separated by newline)",
+			"functionCategory": "Syllogism",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Syllogism",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 239839312092547
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 224732864956102,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Quantifier1",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 256143111817245
+				},
+				{
+					"eventType": "variable",
+					"name": "Quantifier2",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 730788559827002
+				},
+				{
+					"eventType": "variable",
+					"name": "Figure",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 669642999706440
+				},
+				{
+					"eventType": "comment",
+					"text": "Extract quantifier information"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 120039811538941,
+							"parameters": {
+								"variable": "Quantifier1",
+								"value": "left(Syllogism,1)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 676801315116347,
+							"parameters": {
+								"variable": "Quantifier2",
+								"value": "mid(Syllogism, 1, 1)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 702655920010681,
+							"parameters": {
+								"variable": "Figure",
+								"value": "right(Syllogism, 1)"
+							}
+						}
+					],
+					"sid": 285829845417607,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "Prem1",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 654551767030610
+						},
+						{
+							"eventType": "variable",
+							"name": "Prem2",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 557886416588369
+						},
+						{
+							"eventType": "comment",
+							"text": "Use quantifier information"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 135970567306866,
+									"parameters": {
+										"variable": "Prem1",
+										"value": "Functions.GetTemplateForQuantifier(Quantifier1)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 827329553912132,
+									"parameters": {
+										"variable": "Prem2",
+										"value": "Functions.GetTemplateForQuantifier(Quantifier2)"
+									}
+								}
+							],
+							"sid": 811725752761289,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Apply figure"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 402482989887762,
+											"parameters": {
+												"variable": "Figure",
+												"comparison": 0,
+												"value": "\"1\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 105088907570947,
+											"parameters": {
+												"variable": "Prem1",
+												"value": "replace(replace(Prem1, \"XXX\", \"AAA\"), \"YYY\", \"BBB\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 864612531354243,
+											"parameters": {
+												"variable": "Prem2",
+												"value": "replace(replace(Prem2, \"XXX\", \"BBB\"), \"YYY\", \"CCC\")"
+											}
+										}
+									],
+									"sid": 982857777551882
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 237722691933493
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 879179979282250,
+											"parameters": {
+												"variable": "Figure",
+												"comparison": 0,
+												"value": "\"2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 322356339526544,
+											"parameters": {
+												"variable": "Prem1",
+												"value": "replace(replace(Prem1, \"XXX\", \"BBB\"), \"YYY\", \"AAA\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 525270275393802,
+											"parameters": {
+												"variable": "Prem2",
+												"value": "replace(replace(Prem2, \"XXX\", \"CCC\"), \"YYY\", \"BBB\")"
+											}
+										}
+									],
+									"sid": 689052116565304
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 826339738351965
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 259552905802012,
+											"parameters": {
+												"variable": "Figure",
+												"comparison": 0,
+												"value": "\"3\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 745667591389144,
+											"parameters": {
+												"variable": "Prem1",
+												"value": "replace(replace(Prem1, \"XXX\", \"AAA\"), \"YYY\", \"BBB\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 776564337254053,
+											"parameters": {
+												"variable": "Prem2",
+												"value": "replace(replace(Prem2, \"XXX\", \"CCC\"), \"YYY\", \"BBB\")"
+											}
+										}
+									],
+									"sid": 696882134993349
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 772869481114272
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 513685401079351,
+											"parameters": {
+												"variable": "Figure",
+												"comparison": 0,
+												"value": "\"4\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 663004753265545,
+											"parameters": {
+												"variable": "Prem1",
+												"value": "replace(replace(Prem1, \"XXX\", \"BBB\"), \"YYY\", \"AAA\")"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 769920521485994,
+											"parameters": {
+												"variable": "Prem2",
+												"value": "replace(replace(Prem2, \"XXX\", \"BBB\"), \"YYY\", \"CCC\")"
+											}
+										}
+									],
+									"sid": 290013095701606
+								},
+								{
+									"eventType": "comment",
+									"text": "Combine"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-function-return-value",
+											"objectClass": "Functions",
+											"sid": 828546689409116,
+											"parameters": {
+												"value": "Prem1 & newline & Prem2"
+											}
+										}
+									],
+									"sid": 674658556466060
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "GetTemplateForQuantifier",
+			"functionDescription": "Returns a template for a given quantifier",
+			"functionCategory": "Syllogism",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Quantifier",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 100310157498897
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 788307574769499,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 818918685016186,
+							"parameters": {
+								"variable": "Quantifier",
+								"comparison": 0,
+								"value": "\"A\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 324589173887995,
+							"parameters": {
+								"value": "\"All XXX are YYY\""
+							}
+						}
+					],
+					"sid": 792043586657944
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 952960081572983
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 345012928882343,
+							"parameters": {
+								"variable": "Quantifier",
+								"comparison": 0,
+								"value": "\"E\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 205078733188284,
+							"parameters": {
+								"value": "\"No XXX are YYY\""
+							}
+						}
+					],
+					"sid": 421095609511140
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 213672724395657
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 873498678282418,
+							"parameters": {
+								"variable": "Quantifier",
+								"comparison": 0,
+								"value": "\"I\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 166474225660938,
+							"parameters": {
+								"value": "\"Some XXX are YYY\""
+							}
+						}
+					],
+					"sid": 799202146398441
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 797644073992232
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 669289913462222,
+							"parameters": {
+								"variable": "Quantifier",
+								"comparison": 0,
+								"value": "\"O\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 500582887073760,
+							"parameters": {
+								"value": "\"Some XXX are not YYY\""
+							}
+						}
+					],
+					"sid": 580206923868096
+				}
+			]
+		},
+		{
+			"functionName": "GetResponseTemplate",
+			"functionDescription": "Returns a template containing AAA and CCC for a given response",
+			"functionCategory": "Syllogism",
+			"functionReturnType": "string",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Response",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 823866309073063
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 351035299872340,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "Quantifier",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 383406780899347
+				},
+				{
+					"eventType": "variable",
+					"name": "Direction",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 223232857219977
+				},
+				{
+					"eventType": "variable",
+					"name": "ResponseTemplate",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 480231281401985
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 202088898180083,
+							"parameters": {
+								"variable": "Response",
+								"comparison": 0,
+								"value": "\"NVC\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 535494660719260,
+							"parameters": {
+								"value": "\"No valid conclusion\""
+							}
+						}
+					],
+					"sid": 467337913573577
+				},
+				{
+					"eventType": "comment",
+					"text": "Extract quantifier information"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 167407854914887
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 561939777311623,
+							"parameters": {
+								"variable": "Quantifier",
+								"value": "left(Response,1)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 450715511047297,
+							"parameters": {
+								"variable": "Direction",
+								"value": "mid(Response,1,2)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 339669286043632,
+							"parameters": {
+								"variable": "ResponseTemplate",
+								"value": "Functions.GetTemplateForQuantifier(Quantifier)"
+							}
+						}
+					],
+					"sid": 365773093122970,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Use the direction"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 805293133018811,
+									"parameters": {
+										"variable": "Direction",
+										"comparison": 0,
+										"value": "\"ac\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 772320280785934,
+									"parameters": {
+										"value": "replace(replace(ResponseTemplate, \"XXX\", \"AAA\"), \"YYY\", \"CCC\")"
+									}
+								}
+							],
+							"sid": 347176271356785
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 213701006522604
+								}
+							],
+							"actions": [
+								{
+									"id": "set-function-return-value",
+									"objectClass": "Functions",
+									"sid": 248974467241132,
+									"parameters": {
+										"value": "replace(replace(ResponseTemplate, \"XXX\", \"CCC\"), \"YYY\", \"AAA\")"
+									}
+								}
+							],
+							"sid": 883741403865390
+						}
+					]
+				}
+			]
+		},
+		{
+			"functionName": "IsCorrectResponse",
+			"functionDescription": "Returns 1 if the given response is correct for a given syllogism",
+			"functionCategory": "Syllogism",
+			"functionReturnType": "number",
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Syllogism",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 302464021127218
+				},
+				{
+					"name": "Response",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 835791626242462
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 306976131358150,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 282943256283034,
+							"parameters": {
+								"first-value": "find(FOLResponses.Get(Syllogism), Response)",
+								"comparison": 1,
+								"second-value": "-1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 237622589220193,
+							"parameters": {
+								"value": "1"
+							}
+						}
+					],
+					"sid": 706505334547891
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 261824854471096
+						}
+					],
+					"actions": [
+						{
+							"id": "set-function-return-value",
+							"objectClass": "Functions",
+							"sid": 787333353190723,
+							"parameters": {
+								"value": "0"
+							}
+						}
+					],
+					"sid": 771625352793689
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 642296386759679
+				}
+			],
+			"actions": [],
+			"sid": 847905429859049,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-empty",
+							"objectClass": "FOLResponses",
+							"sid": 956093933427253
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 854478222821654,
+							"parameters": {
+								"tag": "\"fol\"",
+								"file": "folResponses.json"
+							}
+						}
+					],
+					"sid": 615329867762407
+				},
+				{
+					"eventType": "comment",
+					"text": "Ordering for the responses"
+				},
+				{
+					"eventType": "variable",
+					"name": "tmpResponses",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 458371750420257
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 436616512099863,
+							"parameters": {
+								"variable": "ResponseOrdering",
+								"comparison": 0,
+								"value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 442311299285169,
+							"parameters": {
+								"variable": "ResponseOrdering",
+								"value": "\"Aac;Aca;Eac;Eca;Iac;Ica;Oac;Oca;NVC\""
+							}
+						},
+						{
+							"id": "createPermutationTable",
+							"objectClass": "AdvancedRandom",
+							"sid": 780252601840134,
+							"parameters": {
+								"length": "9",
+								"offset": "0"
+							}
+						}
+					],
+					"sid": 732544611356700,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 730142226710703,
+									"parameters": {
+										"name": "\"response\"",
+										"start-index": "0",
+										"end-index": "8"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 961589609361641,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 123312865953507,
+											"parameters": {
+												"first-value": "loopindex(\"response\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 865678836400350,
+											"parameters": {
+												"variable": "tmpResponses",
+												"value": "tokenat(ResponseOrdering, AdvancedRandom.Permutation(loopindex(\"response\")), \";\")"
+											}
+										}
+									],
+									"sid": 707035894792049
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 652491821794935
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 580678461973314,
+											"parameters": {
+												"variable": "tmpResponses",
+												"value": "tmpResponses & \";\" & tokenat(ResponseOrdering, AdvancedRandom.Permutation(loopindex(\"response\")), \";\")"
+											}
+										}
+									],
+									"sid": 635690700017350
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 494669575889622,
+									"parameters": {
+										"variable": "ResponseOrdering",
+										"value": "tmpResponses"
+									}
+								}
+							],
+							"sid": 575777159504384
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Ordering for the training syllogisms"
+				},
+				{
+					"eventType": "variable",
+					"name": "tmpTrainSyllogisms",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 676457055970761
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "createPermutationTable",
+							"objectClass": "AdvancedRandom",
+							"sid": 813710242913450,
+							"parameters": {
+								"length": "tokencount(SyllogismTrainingList, \";\")",
+								"offset": "0"
+							}
+						}
+					],
+					"sid": 997096405481612
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 239176092211345,
+							"parameters": {
+								"name": "\"trainsyllog\"",
+								"start-index": "0",
+								"end-index": "tokencount(SyllogismTrainingList, \";\") - 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 197129504745647,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 453635870984462,
+									"parameters": {
+										"first-value": "loopindex(\"trainsyllog\")",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 655046628407600,
+									"parameters": {
+										"variable": "tmpTrainSyllogisms",
+										"value": "tokenat(SyllogismTrainingList, AdvancedRandom.Permutation(loopindex(\"trainsyllog\")), \";\")"
+									}
+								}
+							],
+							"sid": 831984838362076
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 430536290282220
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 753258163403976,
+									"parameters": {
+										"variable": "tmpTrainSyllogisms",
+										"value": "tmpTrainSyllogisms & \";\" & tokenat(SyllogismTrainingList, AdvancedRandom.Permutation(loopindex(\"trainsyllog\")), \";\")"
+									}
+								}
+							],
+							"sid": 474933975857845
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 277400551965710,
+							"parameters": {
+								"variable": "SyllogismTrainingList",
+								"value": "tmpTrainSyllogisms"
+							}
+						}
+					],
+					"sid": 151628831158856
+				},
+				{
+					"eventType": "comment",
+					"text": "Ordering for the training syllogisms"
+				},
+				{
+					"eventType": "variable",
+					"name": "tmpTestSyllogisms",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 849348035771515
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "createPermutationTable",
+							"objectClass": "AdvancedRandom",
+							"sid": 645809357347688,
+							"parameters": {
+								"length": "tokencount(SyllogismTestList, \";\")",
+								"offset": "0"
+							}
+						}
+					],
+					"sid": 630760690845342
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 221413509338561,
+							"parameters": {
+								"name": "\"syllog\"",
+								"start-index": "0",
+								"end-index": "tokencount(SyllogismTestList, \";\") - 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 828696274671770,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 794336699444208,
+									"parameters": {
+										"first-value": "loopindex(\"syllog\")",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 563314426073661,
+									"parameters": {
+										"variable": "tmpTestSyllogisms",
+										"value": "tokenat(SyllogismTestList, AdvancedRandom.Permutation(loopindex(\"syllog\")), \";\")"
+									}
+								}
+							],
+							"sid": 844476742258931
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 678752144920458
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 300288220170223,
+									"parameters": {
+										"variable": "tmpTestSyllogisms",
+										"value": "tmpTestSyllogisms & \";\" & tokenat(SyllogismTestList, AdvancedRandom.Permutation(loopindex(\"syllog\")), \";\")"
+									}
+								}
+							],
+							"sid": 814120143085891
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 545112209949251,
+							"parameters": {
+								"variable": "SyllogismTestList",
+								"value": "tmpTestSyllogisms"
+							}
+						},
+						{
+							"id": "createPermutationTable",
+							"objectClass": "AdvancedRandom",
+							"sid": 322094017553501,
+							"parameters": {
+								"length": "tokencount(SyllogismContents, \";\")",
+								"offset": "0"
+							}
+						}
+					],
+					"sid": 517076112667971
+				},
+				{
+					"eventType": "comment",
+					"text": "Ordering for the placeholders"
+				},
+				{
+					"eventType": "variable",
+					"name": "tmpPlaceholders",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 561796449888379
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 931103731186625,
+							"parameters": {
+								"name": "\"contents\"",
+								"start-index": "0",
+								"end-index": "tokencount(SyllogismContents, \";\") - 1"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 872468320143307,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 667616060562627,
+									"parameters": {
+										"first-value": "loopindex(\"contents\")",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 212026155754641,
+									"parameters": {
+										"variable": "tmpPlaceholders",
+										"value": "tokenat(SyllogismContents, AdvancedRandom.Permutation(loopindex(\"contents\")), \";\")"
+									}
+								}
+							],
+							"sid": 488469969303148
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 784426890248939
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 341993778786500,
+									"parameters": {
+										"variable": "tmpPlaceholders",
+										"value": "tmpPlaceholders & \";\" & tokenat(SyllogismContents, AdvancedRandom.Permutation(loopindex(\"contents\")), \";\")"
+									}
+								}
+							],
+							"sid": 361724014273422
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 313011337086770,
+							"parameters": {
+								"variable": "SyllogismContents",
+								"value": "tmpPlaceholders"
+							}
+						}
+					],
+					"sid": 652049315039521
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 505695466829950,
+					"parameters": {
+						"tag": "\"fol\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "FOLResponses",
+					"sid": 462966061232951,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				}
+			],
+			"sid": 449009444521960
+		}
+	],
+	"sid": 686100506165806
+}

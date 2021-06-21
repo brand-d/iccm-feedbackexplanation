@@ -1,0 +1,26 @@
+{
+	"name": "Syllogism Feedback",
+	"short_name": "Syllogism Feedback",
+	"description": "With this experiment, we aim at studying the way humans reason. Thank you for participating!",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "landscape",
+	"background_color": "#ffffff",
+	"icons": [
+		{
+			"src": "icons/icon-16.png",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-32.png",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-64.png",
+			"sizes": "64x64",
+			"type": "image/png"
+		}
+	]
+}
