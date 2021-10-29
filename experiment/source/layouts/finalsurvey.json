@@ -751,7 +751,7 @@
 					"uid": 150,
 					"instanceVariables": {
 						"RadioTag": "strategies",
-						"RadioText": "No",
+						"RadioText": "Not at all",
 						"isPressed": false,
 						"isChecked": false,
 						"RadioValue": "1",
@@ -785,13 +785,50 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 156,
+					"uid": 154,
 					"instanceVariables": {
 						"RadioTag": "strategies",
-						"RadioText": "Yes",
+						"RadioText": "Only for specific cases",
 						"isPressed": false,
 						"isChecked": false,
 						"RadioValue": "2",
+						"isDisabled": true,
+						"YFactor": 0.8
+					},
+					"behaviors": {},
+					"world": {
+						"x": 506,
+						"y": 288,
+						"width": 39,
+						"height": 39,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "RadioBorderLabelBelow",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Empty",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 156,
+					"instanceVariables": {
+						"RadioTag": "strategies",
+						"RadioText": "Yes, for all/most cases",
+						"isPressed": false,
+						"isChecked": false,
+						"RadioValue": "3",
 						"isDisabled": true,
 						"YFactor": 0.8
 					},
