@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 24100,
+	"savedWithRelease": 26800,
 	"name": "Syllogism Feedback",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,7 @@
 			"id": "Date",
 			"name": "Date",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -27,7 +27,7 @@
 			"id": "AJAX",
 			"name": "AJAX",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -35,7 +35,7 @@
 			"id": "Browser",
 			"name": "Browser",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -43,7 +43,7 @@
 			"id": "LocalStorage",
 			"name": "Local storage",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -51,7 +51,7 @@
 			"id": "Touch",
 			"name": "Touch",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -59,7 +59,7 @@
 			"id": "AdvancedRandom",
 			"name": "Advanced Random",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -67,7 +67,7 @@
 			"id": "Mouse",
 			"name": "Mouse",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -75,7 +75,7 @@
 			"id": "Text",
 			"name": "Text",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -83,7 +83,7 @@
 			"id": "Dictionary",
 			"name": "Dictionary",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -91,7 +91,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -99,7 +99,7 @@
 			"id": "NinePatch",
 			"name": "9-patch",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -107,7 +107,7 @@
 			"id": "TextBox",
 			"name": "Text input",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		},
 		{
@@ -115,7 +115,7 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r241",
+			"version": "r268",
 			"bundled": false
 		}
 	],
@@ -449,21 +449,20 @@
 			1,
 			0
 		],
-		"useHighDpi": true,
 		"orientations": "landscape",
-		"enableWebGL": true,
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
 		"compositingMode": "standard",
 		"sampling": "trilinear",
 		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
 		"loaderStyle": "progress",
 		"preloadSounds": true,
-		"clearBackground": true,
-		"enhancedAccelerationPrecision": true,
-		"cordovaiOSScheme": "app"
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "file"
 	},
 	"viewportWidth": 1024,
 	"viewportHeight": 768,
