@@ -149,7 +149,7 @@ print("        mean={}, std={}, median={}, mad={}".format(
     stats.median_abs_deviation(grp_conf_feedback_not_nvc)))
 print()
 
-print("    p={} (Bonferroni corrected) U={}, reject: {}".format(p_corrected[0], confidence_not_nvc_mwu.statistic, reject[0]))
+print("    p={} (Bonferroni corrected), p={}, U={}, reject: {}".format(p_corrected[0], confidence_not_nvc_mwu.pvalue, confidence_not_nvc_mwu.statistic, reject[0]))
 print()
 print()
 
@@ -167,13 +167,13 @@ print()
 
 print("Feedback Time for NVC:")
 print("    mean={}, std={}, median={}, mad={}".format(
-    np.mean(time_control_nvc),
-    np.std(time_control_nvc),
-    np.median(time_control_nvc),
-    stats.median_abs_deviation(time_control_nvc)))
+    np.mean(time_feedback_nvc),
+    np.std(time_feedback_nvc),
+    np.median(time_feedback_nvc),
+    stats.median_abs_deviation(time_feedback_nvc)))
 print()
 
-print("    p={} (Bonferroni corrected) U={}, reject: {}".format(p_corrected[1], time_mwu_nvc.statistic, reject[1]))
+print("    p={} (Bonferroni corrected), p={}, U={}, reject: {}".format(p_corrected[1], time_mwu_nvc.pvalue, time_mwu_nvc.statistic, reject[1]))
 print()
 print()
 
@@ -195,5 +195,5 @@ print("    mean={}, std={}, median={}, mad={}".format(
     np.median(time_diff_feedback),
     stats.median_abs_deviation(time_diff_feedback)))
 print()
-print("    p={} (Bonferroni corrected) U={}, reject: {}".format(p_corrected[2], time_mwu_diff.statistic, reject[2]))
+print("    p={} (Bonferroni corrected), p={}, U={}, reject: {}".format(p_corrected[2], time_mwu_diff.pvalue, time_mwu_diff.statistic, reject[2]))
 
