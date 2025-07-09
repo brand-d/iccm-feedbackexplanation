@@ -93,6 +93,6 @@ The webexperiment can be opened using the editor at https://editor.construct.net
 
 ### References
 
-Brand, D., Riesterer, N., & Ragni, M. (in press). Model-Based Explanation of Feedback Effects in Syllogistic Reasoning. In Proceedings of the 19th International Conference on Cognitive Modeling.
+Brand, D., Riesterer, N., & Ragni, M. (2021). Model-Based Explanation of Feedback Effects in Syllogistic Reasoning. In Proceedings of the 19th International Conference on Cognitive Modeling.
 
 Dames, H., Schiebel, C., & Ragni, M. (2020). The role of feedback and post-error adaptations in reasoning. In S. Denison, M. Mack, Y. Xu, & B. C. Armstrong (Eds.), Proceedings of the 42nd annual conference of the cognitive science society (pp. 3275–3281). Cognitive Science Society.
